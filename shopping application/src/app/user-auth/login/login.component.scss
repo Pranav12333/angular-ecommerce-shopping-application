@@ -1,0 +1,75 @@
+.mainForm {
+  max-width: 480px;
+  border: 2px solid rgb(72, 7, 98);
+  box-shadow: 0px 1px 6px 1px rgba(104, 11, 65, 0.449);
+  border-radius: 22px;
+  padding: 60px;
+}
+@media screen and (max-width: 704px) {
+  .mainForm {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .mainForm {
+    padding: 10px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.form-label {
+  font-weight: bold;
+  color: #30349e;
+}
+
+.form-group label {
+  font-size: 15px;
+  color: #30349e;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-field-shadow {
+  box-shadow: 0px 1px 4px 1px rgba(95, 0, 255, 0.218);
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
+
+.password-input {
+  position: relative;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: transparent;
+  color: #7700ff;
+  border: 1px solid #7700ff;
+  // font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #8244c9;
+  color: #fff;
+}
+
+

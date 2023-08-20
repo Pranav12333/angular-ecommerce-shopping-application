@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="border p-5 m-3">
+    <form [formGroup]="dataForm" >
+
+      <div *ngIf="maleDropdown">
+        <label class="form-label">Select male category:</label>
+        <div class="form-select-placeholder">
+          <select class="form-select mb-4 form-field-shadow" formControlName="category">
+            <option value="">Select mans wear here</option>
+            <option value="Casual">Casual</option>
+            <option value="Traditional">Traditional</option>
+            <option value="Ethnic">Ethnic</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="femaleDropdown">
+        <label class="form-label">Select female category:</label>
+        <div class="form-select-placeholder">
+          <select class="form-select mb-4 form-field-shadow" formControlName="category">
+            <option value="">Select womans wear here</option>
+            <option value="Saree">Saree</option>
+            <option value="Suit">Suit</option>
+            <option value="Dress">Dress</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+        <div *ngIf="dataForm.get('title')?.errors && dataForm.get('title')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFile">Image File</label>
+        <input type="file" id="imageFile" class="form-control" (change)="handleFileInput($event)">
+        <div *ngIf="selectedFile === null && dataForm.get('image')?.touched" class="text-danger">
+          Image is required.
+        </div>
+      </div>      
+      
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" class="form-control" formControlName="price">
+        <div *ngIf="dataForm.get('price')?.errors && dataForm.get('price')?.touched" class="text-danger">
+          price is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+        <div *ngIf="dataForm.get('description')?.errors && dataForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary m-4 px-3" input type="submit" (click)="addData(dataForm.value)"
+          routerLink="/admin/show" [disabled]="!dataForm.valid">Add product</button>
+        <button class="btn btn-primary" input type="submit" routerLink="/admin/show">Show products</button>
+      </div>
+    </form>
+  </div>
+</div>

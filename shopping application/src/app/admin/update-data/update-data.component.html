@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="border p-5">
+
+    <form [formGroup]="dataForm">
+      <div *ngIf="maleDropdown">
+      <label class="form-label">Select category:</label>
+      <div class="form-select-placeholder">
+        <select class="form-select mb-4 form-field-shadow" formControlName="category">
+          <option value="">Select mans wear here</option>
+          <option value="Casual">Casual</option>
+          <option value="Traditional">Traditional</option>
+          <option value="Ethnic">Ethnic</option>
+          <option value="Others">Others</option>
+        </select>
+        <div class="placeholder-overlay">{{ selectedOptionMale || ''}}</div>
+      </div>
+    </div>
+
+    <div *ngIf="femaleDropdown">
+      <label class="form-label">Select category:</label>
+      <div class="form-select-placeholder">
+        <select  class="form-select mb-4 form-field-shadow"  formControlName="category" >
+          <option value="Saree">Saree</option>
+          <option value="Suit">Suit</option>
+          <option value="Dress">Dress</option>
+          <option value="OthersFemale">Others</option>
+          <option value="showAll" selected>showAll</option>
+        </select>
+        <div class="placeholder-overlay">{{ selectedOptionFemale || ''}}</div>
+      </div>
+    </div>
+
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+        <div *ngIf="dataForm.get('title')?.errors && dataForm.get('title')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFile" class="col-form-label">Image File</label>
+        <div class="input-group">
+          <div *ngIf="allData.image" class="input-group-prepend updateImage mr-3">
+            <img [src]="allData.image" alt="Image" class="img-thumbnail">
+          </div>
+          <div class="custom-file">
+            <input type="file" id="fileInput" class="custom-file-input" (change)="handleFileInput($event)">
+            <label for="fileInput" class="custom-file-label">Choose file</label>
+          </div>
+        </div>
+        <div *ngIf="dataForm.get('image')?.errors && dataForm.get('image')?.touched" class="text-danger">
+          Image is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="price" class="form-control" formControlName="price">
+        <div *ngIf="dataForm.get('price')?.errors && dataForm.get('price')?.touched" class="text-danger">
+          price is required.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+        <div *ngIf="dataForm.get('description')?.errors && dataForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="dataForm.invalid" routerLink="/admin/show"
+          (click)="upadateData(dataForm.value)">Update data</button>
+      </div>
+    </form>
+  </div>
+</div>

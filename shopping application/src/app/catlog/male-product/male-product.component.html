@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 col-lg-4">
+    <div class="form-select-placeholder">
+      <select class="form-select" [(ngModel)]="selectedOptionMale" (ngModelChange)="getMaleFilteredData()">
+        <option value="Casual">Casual</option>
+        <option value="Traditional">Traditional</option>
+        <option value="Ethnic">Ethnic</option>
+        <option value="OthersMale">Others</option>
+        <option value="showAll">showAll</option>
+      </select>
+      <div class="placeholder-overlay">{{ selectedOptionMale || 'Select mans wear' }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="container allCard">
+  <div class="row justify-content-center mt-5 scroll-container">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let item of allProduct">
+      <div class="card">
+        <img class="card-img-top" height="16rem" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image"
+          alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.category }}</h5>
+          <h5 class="card-title">{{ item.title }}</h5>
+          <b class="card-text price">Price:{{ item.price }}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

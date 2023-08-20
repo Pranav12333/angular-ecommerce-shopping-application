@@ -1,0 +1,135 @@
+{
+  "UserAuthData": [
+    {
+      "username": "sunil",
+      "email": "sarvaia@gmail.com",
+      "password": "sarvaia@gmail.com",
+      "confirmPassword": "sarvaia@gmail.com",
+      "id": 1
+    },
+    {
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "test@123",
+      "confirmPassword": "test@123",
+      "id": 2
+    },
+    {
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "test@123",
+      "confirmPassword": "test@123",
+      "id": 3
+    },
+    {
+      "username": "pranav",
+      "email": "pranav@gmail.com",
+      "password": "pranav@123",
+      "confirmPassword": "pranav@123",
+      "id": 4
+    }
+  ],
+  "AdminAuthData": [
+    {
+      "username": "sunil",
+      "email": "sunil@gmail.com",
+      "password": "sunil@123",
+      "confirmPassword": "sunil@123",
+      "id": 1
+    },
+    {
+      "username": "pranav",
+      "email": "pranav@gmail.com",
+      "password": "pranav@123",
+      "confirmPassword": "pranav@123",
+      "id": 2
+    }
+  ],
+  "allProduct": [
+    {
+      "category": "Traditional",
+      "title": "male product casual",
+      "image": "/assets/male-casual-1.jpg",
+      "description": "good male product casual is here for you ",
+      "id": 1,
+      "gender": "male"
+    },
+    {
+      "category": "Casual",
+      "title": "male product casual",
+      "image": "/assets/male-casual-1.jpg",
+      "description": "good male product casual is here for you ",
+      "id": 5,
+      "gender": "male"
+    },
+    {
+      "category": "Casual",
+      "title": "male product casual",
+      "image": "/assets/male-casual-1.jpg",
+      "description": "good male product casual is here for you ",
+      "id": 6,
+      "gender": "male"
+    },
+    {
+      "category": "Casual",
+      "title": "male product casual",
+      "image": "/assets/male-casual-1.jpg",
+      "description": "good male product casual is here for you ",
+      "id": 7,
+      "gender": "male"
+    },
+    {
+      "category": "Saree",
+      "title": "femaleProduct-1",
+      "image": "/assets/female-saree-1.jpg",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "id": 8,
+      "gender": "female"
+    },
+    {
+      "category": "Suit",
+      "title": "femaleProduct-21",
+      "image": "/assets/female-suit-1.jpg",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "id": 9,
+      "gender": "female"
+    },
+    {
+      "category": "Dress",
+      "title": "femaleProduct-31",
+      "image": "/assets/female-dress-1.jfif",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "id": 10,
+      "gender": "female"
+    },
+    {
+      "id": 11,
+      "category": "OthersFemale",
+      "title": "femaleProduct-4",
+      "image": "/assets/female-saree-2.jpg",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "gender": "female"
+    },
+    {
+      "id": 12,
+      "category": "Saree",
+      "title": "femaleProduct-5",
+      "image": "/assets/female-saree-2.jpg",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "gender": "female"
+    },
+    {
+      "category": "Saree",
+      "title": "femaleProduct-61",
+      "image": "/assets/female-saree-1.jpg",
+      "description": "Make a lasting impression with a beautiful Patola saree.",
+      "id": 13,
+      "gender": "female"
+    }
+  ],
+  [
+    {
+      "maleCategory":""
+
+  }]
+}
