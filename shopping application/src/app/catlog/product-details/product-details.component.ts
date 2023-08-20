@@ -62,6 +62,8 @@ export class ProductDetailsComponent {
 
   getProductsToProceed() {
     this.productService.compareData().subscribe(products => {
+      console.log(products);
+      
     });
   }
 }

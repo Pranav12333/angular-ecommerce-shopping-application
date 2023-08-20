@@ -1,14 +1,14 @@
-<div class="col-lg-3 col-md-4 col-sm-6 m-4 product-container" *ngFor="let item of productData">
-  <div class="product-container-inner">
-    <a><img class="card-img-top image" [src]="item.image" alt="Card image cap"></a>
-    <div class="product-details content">
-      <h5 class="card-title">{{item.category}}</h5>
-      <h5 class="card-title">{{item.title}}</h5>
-      <p>
-      <b class="card-text price"> Price: {{ item.price }}</b></p> 
-      <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
-      <p class="card-text">{{item.description}}</p>
+<div class="col-lg-10 col-md-8 col-sm-12 m-4 product-container mx-auto" *ngFor="let item of productData">
+    <div class="row align-items-center">
+      <div class="image-container col-lg-3 col-md-6 col-sm-12 m-5">
+        <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
+      </div>
+      <div class="content col-lg-7 col-md-6 col-sm-12">
+        <h5 class="card-title">{{item.category}}</h5>
+        <h5 class="card-title">{{item.title}}</h5>
+        <p><b class="card-text price">Price: {{ item.price }}</b></p> 
+        <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
+        <p class="card-text">{{item.description}}</p>
+      </div>
     </div>
-  </div>
 </div>
-
