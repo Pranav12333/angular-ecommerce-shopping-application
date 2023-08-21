@@ -27,8 +27,13 @@ export class AddToCartComponent implements OnInit {
         this.addedProducts = res.reduce((accumulator, product) => {
           if (product.cart === 1) {
             product.quantity = 1;
+            console.log(product.quantity);
+            
             this.totalprice += product.price;
             accumulator.push(product);
+            console.log(product.price);
+            console.log(this.totalprice);
+            
           }
           return accumulator;
         }, []);

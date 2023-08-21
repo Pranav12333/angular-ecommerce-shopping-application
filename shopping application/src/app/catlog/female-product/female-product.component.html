@@ -20,7 +20,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ item.category }}</h5>
           <h5 class="card-title">{{ item.title }}</h5>
-          <b class="card-text price">Price:{{ item.price }}</b>
+          <b class="card-text price">Price:{{ item.price | rupeeFormat}}</b>
         </div>
       </div>
     </div>

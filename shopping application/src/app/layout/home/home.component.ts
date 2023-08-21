@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RupeeFormatPipe } from 'src/app/pipes/rupee-format.pipe';
 import { ProductService } from 'src/app/services/product.service';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -21,7 +22,6 @@ export class HomeComponent {
     });
     this.productService.filteredProducts$.subscribe((res) => {
       this.filteredProducts = res;
-      console.log(this.filteredProducts);
     });
   }
 
@@ -44,7 +44,7 @@ export class HomeComponent {
     const selectedPrice = (event.target as HTMLInputElement).valueAsNumber;
     this.selectedPrice = { ...this.selectedPrice, max: selectedPrice };
     this.filteredProducts = this.allProduct.filter((product: { price: number }) =>
-      product.price >= this.selectedPrice.min && product.price <= this.selectedPrice.max
+      product.price >= this.selectedPrice.min && product.price <= this.selectedPrice.max 
     );
   }
 }

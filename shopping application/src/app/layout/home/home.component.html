@@ -1,5 +1,5 @@
 <div *ngIf="showCarousel">
-  
+
   <div id="carouselExampleIndicators" class="carousel slide slider" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
@@ -50,35 +50,33 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-12 price">
-      <div class="form-group">
+    <div class="col-lg-3 col-md-6 col-sm-12 price-range p-2">
         <label for="priceRange" class="form-label">Select price range:</label>
-        <input type="range" class="form-range" min="1000" max="5000" step="100" id="priceRange" (input)="onPriceRangeChange($event)">
+        <input type="range" class="form-range" min="1000" max="5000" step="100" id="priceRange"
+          (input)="onPriceRangeChange($event)">
         <div class="d-flex justify-content-between">
-          <span>Min Price: {{selectedPrice.min}}</span>
-          <span>Max Price: {{selectedPrice.max}}</span>
+          <span>Min Price: {{selectedPrice.min | rupeeFormat}}</span>
+          <span>Selected Price: {{selectedPrice.max | rupeeFormat}}</span>
+          <span>Max Price: {{5000 | rupeeFormat}}</span>
         </div>
-      </div>
     </div>
   </div>
 </div>
 
-<div class="container allCard">
-  <div class="row justify-content-center mt-5 scroll-container">
+<div class="container">
+  <div class="row justify-content-center scroll-container">
     <!-- Use the appropriate array based on the flag -->
-    <div class="col-lg-3"
-      *ngFor="let item of (showFilteredProducts ? filteredProducts :  allProduct  )">
-      <div class="card  h-100">
-        <img class="card-img-top" height="16rem" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image"
+    <div class="col-lg-3" *ngFor="let item of (showFilteredProducts ? filteredProducts :  allProduct  )">
+      <div class="card">
+        <img class="card-img-top" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image"
           alt="Card image cap">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ item.category }}</h5>
           <h5 class="card-title">{{ item.title }}</h5>
-          <b class="card-text price">Price:{{ item.price }}</b>
+          <b class="card-text">Price:{{ item.price | rupeeFormat }}</b>
         </div>
-        <button class="btn btn-outline-secondary" routerLink="/catlog/product-details/{{item.id}}">buy
-          now</button>
       </div>
+      <button class="btn btn-outline-secondary mx-auto mt-3 d-flex " routerLink="/catlog/product-details/{{item.id}}">buy now</button>
     </div>
   </div>
 </div>

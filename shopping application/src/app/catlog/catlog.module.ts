@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -20,12 +21,14 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     MaleProductComponent,
     ContactUsComponent,
     AboutUsComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    
   ],
   imports: [
     CommonModule,
     CatlogRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class CatlogModule { }

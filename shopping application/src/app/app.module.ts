@@ -9,12 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
-import { RupeesPipe } from './pipes/rupees.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RupeesPipe,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
       <div class="content col-lg-7 col-md-6 col-sm-12">
         <h5 class="card-title">{{item.category}}</h5>
         <h5 class="card-title">{{item.title}}</h5>
-        <p><b class="card-text price">Price: {{ item.price }}</b></p> 
+        <p><b class="card-text price">Price: {{ item.price | rupeeFormat }}</b></p> 
         <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
         <p class="card-text">{{item.description}}</p>
       </div>

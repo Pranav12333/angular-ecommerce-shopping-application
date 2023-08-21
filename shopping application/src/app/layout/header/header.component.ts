@@ -56,6 +56,7 @@ export class HeaderComponent implements OnInit {
   }
   showSlider() {
     this.sharedService.setShowCarousel(true);
+    this.productService.setAllProduct(false);
     // this.userService.clearUsername();
   }
 

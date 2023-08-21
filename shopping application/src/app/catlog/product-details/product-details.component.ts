@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toArray } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
-import { RupeesPipe } from 'src/app/pipes/rupees.pipe'; 
 
 @Component({
   selector: 'app-product-details',
@@ -13,6 +12,7 @@ export class ProductDetailsComponent {
   productId: any;
   productData: any;
   totalQuantity: any;
+
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
@@ -46,7 +46,6 @@ export class ProductDetailsComponent {
       // Check if the product's cart property is already set to 1
       if (productToUpdate.cart === 1) {
         alert("Product is already exist in the cart.");
-        return;
       }
       productToUpdate.cart = 1;
       this.productService.updateData(this.productId, productToUpdate).subscribe((res) => {
@@ -62,8 +61,6 @@ export class ProductDetailsComponent {
 
   getProductsToProceed() {
     this.productService.compareData().subscribe(products => {
-      console.log(products);
-      
     });
   }
 }

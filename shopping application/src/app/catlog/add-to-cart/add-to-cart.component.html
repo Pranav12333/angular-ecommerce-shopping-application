@@ -16,7 +16,8 @@
       <tr>
         <td height="100" width="100"><b>{{i+1}}</b></td>
         <td height="100" width="230">{{item.title}}</td>
-        <td  height="100" width="280"><img [src]="item.image" alt="Product Image" height="100" width="85" [attr.src]="item.image" class="image" />
+        <td height="100" width="280"><img [src]="item.image" alt="Product Image" height="100" width="85"
+            [attr.src]="item.image" class="image" />
         </td>
         <td class="col-2">
           <div class="input-group">
@@ -30,13 +31,13 @@
             </div>
           </div>
         </td>
-        <td height="100" width="150">{{item.price}}</td>
+        <td height="100" width="150">{{item.price | rupeeFormat }}</td>
         <td><button class="btn btn-danger" (click)="deleteProducts(item.id)">Delete</button></td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td class="total-price">Total price:{{totalprice}}
+        <td class="total-price">Total price:{{ totalprice | rupeeFormat }}
         </td>
       </tr>
     </tfoot>
