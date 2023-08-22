@@ -19,6 +19,9 @@ export class AddDataComponent {
   dataForm: any;
   object: any;
   allProducts: any = [];
+  mansWearDropdown: any;
+  womensWearDropdown: any;
+
 
   constructor(
     private toastrService: ToastrService,
@@ -56,7 +59,26 @@ export class AddDataComponent {
       this.femaleDropdown = value;
       localStorage.setItem("femaleDropdown", value.toString());
     });
+
+    this.launchWearDropdown();
+
   }
+
+  launchWearDropdown() {
+    this.mansWearDropdownFun();
+    this.womensWearDropdownFun();
+  }
+  mansWearDropdownFun() {
+    this.productService.getMansWearDropdown().subscribe((res) => {
+      this.mansWearDropdown = res;
+    });
+  }
+  womensWearDropdownFun() {
+    this.productService.getWomensWearDropdown().subscribe((res) => {
+      this.womensWearDropdown = res;
+    });
+  }
+
 
   // image
 

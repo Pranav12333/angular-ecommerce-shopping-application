@@ -2,33 +2,23 @@
   <div class="border p-5">
 
     <form [formGroup]="dataForm">
-      <div *ngIf="maleDropdown">
-      <label class="form-label">Select category:</label>
-      <div class="form-select-placeholder">
-        <select class="form-select mb-4 form-field-shadow" formControlName="category">
-          <option value="">Select mans wear here</option>
-          <option value="Casual">Casual</option>
-          <option value="Traditional">Traditional</option>
-          <option value="Ethnic">Ethnic</option>
-          <option value="Others">Others</option>
-        </select>
-        <div class="placeholder-overlay">{{ selectedOptionMale || ''}}</div>
-      </div>
-    </div>
 
-    <div *ngIf="femaleDropdown">
-      <label class="form-label">Select category:</label>
-      <div class="form-select-placeholder">
-        <select  class="form-select mb-4 form-field-shadow"  formControlName="category" >
-          <option value="Saree">Saree</option>
-          <option value="Suit">Suit</option>
-          <option value="Dress">Dress</option>
-          <option value="OthersFemale">Others</option>
-          <option value="showAll" selected>showAll</option>
+      <!-- dynamic dropdown -->
+      <div class="nav-item dropdown">
+        <select class="form-select" *ngIf="maleDropdown">
+          <option *ngFor="let optionWear of mansWearDropdown" [value]="optionWear.value"
+            [selected]="optionWear.value === allData.category">{{ optionWear.label }}</option>
         </select>
-        <div class="placeholder-overlay">{{ selectedOptionFemale || ''}}</div>
       </div>
-    </div>
+
+      <!-- dynamic dropdown -->
+      <div class="nav-item dropdown">
+        <select class="form-select" *ngIf="femaleDropdown">
+          <option *ngFor="let optionWear of womensWearDropdown" [value]="optionWear.value"
+          [selected]="optionWear.value == allData.category">{{ optionWear.label }}
+          </option>
+        </select>
+      </div>
 
 
       <div class="form-group">

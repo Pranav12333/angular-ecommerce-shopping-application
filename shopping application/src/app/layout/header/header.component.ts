@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.launchDropdown();
+    this.launchProductDropdown();
     this.productService.totalQuantity$.subscribe((quantity) => {
       this.totalQuantity = quantity;
     });
@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  launchDropdown() {
+  launchProductDropdown() {
     this.AddProductDropdownFun();
     this.ShowProductDropdownFun();
   }
@@ -86,7 +86,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.userService.clearUsername();
-    localStorage.removeItem('username');
+    this.username = null;
     this.toasterService.logOutToaster();
   }
 
@@ -117,6 +117,7 @@ export class HeaderComponent implements OnInit {
 
   private updateDropdowns() {
     this.username = this.userService.getUsernameValue();
+    this.username = localStorage.getItem('username');
     this.addProduct = this.username === "Admin";
     this.showProduct = this.username !== "Admin";
   }

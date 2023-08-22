@@ -19,14 +19,15 @@ export class UpdateDataComponent {
   dataForm!: FormGroup;
   maleDropdown: boolean = true;
   femaleDropdown: boolean = true;
+  mansWearDropdown: any;
+  womensWearDropdown: any;
 
   constructor(private productService: ProductService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-
+ 
     let username = this.userService.getUsernameValue();
     if (username != 'Admin') {
-      this.router.navigate(['/user-auth/login']);
       this.userService.clearUsername();
     }
 
@@ -47,20 +48,45 @@ export class UpdateDataComponent {
     this.productService.getDataById(this.productId, this.allData).subscribe((res) => {
 
       this.allData = res;
+      
       this.maleDropdown = this.allData.gender === "male";
       this.femaleDropdown = !this.maleDropdown;
 
       this.dataForm.patchValue({
         category: this.allData.category || '',
-        gender: this.allData.gender || '',
+        gender: this.allData.gender || '',  
         title: this.allData.title || '',
         image: this.allData.image || '',
         price: this.allData.price || '',
         description: this.allData.description || '',
         cart: this.allData.cart || '',
       })
+      if (this.maleDropdown) {
+        this.selectedOptionMale = this.allData.category || '';
+      } else {
+        this.selectedOptionFemale = this.allData.category || '';
+      }
     })
+
+    this.launchWearDropdown();
+
   }
+
+  launchWearDropdown() {
+    this.mansWearDropdownFun();
+    this.womensWearDropdownFun();
+  }
+  mansWearDropdownFun() {
+    this.productService.getMansWearDropdown().subscribe((res) => {
+      this.mansWearDropdown = res;
+    });
+  }
+  womensWearDropdownFun() {
+    this.productService.getWomensWearDropdown().subscribe((res) => {
+      this.womensWearDropdown = res;
+    });
+  }
+
 
   //image
 

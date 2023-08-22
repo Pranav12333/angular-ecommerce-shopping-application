@@ -1,5 +1,5 @@
 .navbar{
-    background:linear-gradient(45deg, #8e7ac0dc, #71a0e3dc, #d57bdfdc) !important;;  
+    background:linear-gradient(45deg, #9787bddc, #8eb3e6dc, #da93e2dc) !important;;  
 }
 .search {
   display: flex;
@@ -18,7 +18,6 @@
       opacity: 0.8;
     }
     &:hover {
-      /* Add hover styles here */
       border-color: #3c68c096; /* Adjust the border color on hover */
       box-shadow: 0px 0px 15px rgb(183 189 207) /* Add a different box shadow on hover */
     }
@@ -37,14 +36,14 @@
 
 /* Add the transition property to the font color of anchor tags inside the navbar list items */
 .navbar-nav li a {
-  color: #5a014d; /* Change the font color to your desired color when hovering */
+  color: #770666; /* Change the font color to your desired color when hovering */
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smoothly change font color over 0.2 seconds */
 }
 
 /* When hovering over the anchor tag, change the font color */
 .navbar-nav li a:hover {
-  color: #001172; /* Change the font color to your desired color when hovering */
-  transform: scale(1.1);
+  color: #001693; /* Change the font color to your desired color when hovering */
+  transform: scale(1.05);
 }
 
 
@@ -56,7 +55,7 @@
   color: #3e0335;
   /* Customize the border, padding, and other styles as needed */
   border: 1px solid  #cbd0f1ca;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.282);
 
 }

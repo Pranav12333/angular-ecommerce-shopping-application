@@ -161,5 +161,41 @@
       "value": "add-female",
       "label": "Add Female Product"
     }
+  ],
+  "mansWearDropdown": [
+    {
+      "value": "Casual",
+      "label": "Casual"
+    },
+    {
+      "value": "Traditional",
+      "label": "Traditional"
+    },
+    {
+      "value": "Ethnic",
+      "label": "Ethnic"
+    },
+    {
+      "value": "Others",
+      "label": "Others"
+    }
+  ],
+  "womensWearDropdown": [
+    {
+      "value": "Saree",
+      "label": "Saree"
+    },
+    {
+      "value": "Suit",
+      "label": "Suit"
+    },
+    {
+      "value": "Dress",
+      "label": "Dress"
+    },
+    {
+      "value": "Others",
+      "label": "Others"
+    }
   ]
 }
