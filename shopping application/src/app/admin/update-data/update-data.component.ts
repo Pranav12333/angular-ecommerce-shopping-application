@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './update-data.component.html',
   styleUrls: ['./update-data.component.scss']
 })
+
 export class UpdateDataComponent {
   productId: any;
   allData: any = [];
@@ -25,7 +26,7 @@ export class UpdateDataComponent {
   constructor(private productService: ProductService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
- 
+
     let username = this.userService.getUsernameValue();
     if (username != 'Admin') {
       this.userService.clearUsername();
@@ -48,13 +49,13 @@ export class UpdateDataComponent {
     this.productService.getDataById(this.productId, this.allData).subscribe((res) => {
 
       this.allData = res;
-      
+
       this.maleDropdown = this.allData.gender === "male";
       this.femaleDropdown = !this.maleDropdown;
 
       this.dataForm.patchValue({
         category: this.allData.category || '',
-        gender: this.allData.gender || '',  
+        gender: this.allData.gender || '',
         title: this.allData.title || '',
         image: this.allData.image || '',
         price: this.allData.price || '',
@@ -95,7 +96,7 @@ export class UpdateDataComponent {
     this.selectedFile = file;
   }
 
-  private getBase64(file: File): Promise<string | ArrayBuffer | null> {
+  private getBase64(file: File): Promise <string | ArrayBuffer | null> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);

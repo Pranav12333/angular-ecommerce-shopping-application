@@ -13,11 +13,13 @@ export class FemaleProductComponent {
   allProduct: any = [];
   object: any;
   selectedOptionFemale: any = "showAll";
+  womensWearDropdown: any;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getFemaleData();
+    this.womensWearDropdownFun();
   }
 
   getFemaleData() {
@@ -36,6 +38,12 @@ export class FemaleProductComponent {
       else {
         this.allProduct = this.object.filter((obj: any) => obj.category === this.selectedOptionFemale);
       }
+    })
+  }
+
+  womensWearDropdownFun() {
+    this.productService.getWomensWearDropdown().subscribe((res)=>{
+      this.womensWearDropdown = res;
     })
   }
 }

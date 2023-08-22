@@ -50,14 +50,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-12 price-range p-2">
-        <label for="priceRange" class="form-label">Select price range:</label>
-        <input type="range" class="form-range" min="1000" max="5000" step="100" id="priceRange"
-          (input)="onPriceRangeChange($event)">
-        <div class="d-flex justify-content-between">
-          <span>Min Price: {{selectedPrice.min | rupeeFormat}}</span>
-          <span>Selected Price: {{selectedPrice.max | rupeeFormat}}</span>
-          <span>Max Price: {{5000 | rupeeFormat}}</span>
-        </div>
+      <label for="priceRange" class="form-label">Select price range:</label>
+      <input type="range" class="form-range" min="1000" max="5000" step="100" id="priceRange"
+        (input)="onPriceRangeChange($event)">
+      <div class="d-flex justify-content-between">
+        <span> Min Price: {{selectedPrice.min | rupeeFormat}} </span>
+        <span> Selected Price: {{selectedPrice.max | rupeeFormat}} </span>
+        <span> Max Price: {{5000 | rupeeFormat}} </span>
+      </div>
     </div>
   </div>
 </div>
@@ -75,7 +75,8 @@
           <b class="card-text">Price:{{ item.price | rupeeFormat }}</b>
         </div>
       </div>
-      <button class="btn btn-outline-secondary mx-auto mt-3 d-flex " routerLink="/catlog/product-details/{{item.id}}">buy now</button>
+      <button class="btn btn-outline-secondary mx-auto mt-3 d-flex "
+        routerLink="/catlog/product-details/{{item.id}}">buy now</button>
     </div>
   </div>
 </div>

@@ -11,12 +11,14 @@ export class MaleProductComponent {
 
   object : any = [];
   allProduct : any = [];
-  selectedOptionMale : any = "";
+  selectedOptionMale : any = "showAll";
+  mansWearDropdown : any; 
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getMaleData()
+    this.getMaleData();
+    this.mansWearDropdownFun()
   }
 
   getMaleData() {
@@ -38,4 +40,9 @@ export class MaleProductComponent {
     })
   }
 
+  mansWearDropdownFun(){
+    this.productService.getMansWearDropdown().subscribe((res)=>{
+      this.mansWearDropdown = res;
+    })
+  }
 }

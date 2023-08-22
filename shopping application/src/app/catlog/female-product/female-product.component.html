@@ -2,15 +2,13 @@
   <div class="col-md-6 col-lg-4">
     <div class="form-select-placeholder">
       <select class="form-select" [(ngModel)]="selectedOptionFemale" (ngModelChange)="getFemaleFilteredData()">
-        <option value="Saree">Saree</option>
-        <option value="Suit">Suit</option>
-        <option value="Dress">Dress</option>
-        <option value="OthersFemale">Others</option>
-        <option value="showAll" selected>showAll</option>
+        <option *ngFor="let optionWear of womensWearDropdown"  [value]="optionWear.value">{{ optionWear.label }}</option>
+        <option value="showAll" selected>Show all</option>
       </select>
     </div>
   </div>
 </div>
+
 
 <div class="container allCard">
   <div class="row justify-content-center mt-5 scroll-container">
