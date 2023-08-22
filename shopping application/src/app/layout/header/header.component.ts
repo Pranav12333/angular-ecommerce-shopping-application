@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SharedService } from 'src/app/services/shared.service';
+import { ToasterService } from 'src/app/services/toaster.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit {
     private router: Router, private userService: UserService,
     private productService: ProductService,
     private adminService: AdminService,
+    private toasterService:ToasterService,
     private sharedService: SharedService) {
 
     this.userService.username$.subscribe((names) => {
@@ -85,6 +87,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.userService.clearUsername();
     localStorage.removeItem('username');
+    this.toasterService.logOutToaster();
   }
 
   navigateTo(event: any) {

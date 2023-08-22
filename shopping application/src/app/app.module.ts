@@ -9,21 +9,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
+import { SharedModule } from "./shared/shared.module";
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    LayoutModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    ToastrModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        LayoutModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot(),
+        SharedModule
+    ]
 })
 export class AppModule { }

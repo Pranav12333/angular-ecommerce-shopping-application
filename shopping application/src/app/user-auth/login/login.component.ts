@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { ToastrService } from 'ngx-toastr';
+import { ToasterService } from 'src/app/services/toaster.service';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +10,16 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
   registrationData: any;
   username: any;
   password: any;
   showPassword: any;
   logInFail: boolean = false;
   toastr: any;
+  isLoggingIn: boolean = false; 
 
-  constructor(private toastrService: ToastrService, private userService: UserService, private router: Router) { }
+  constructor(private toasterService: ToasterService, private userService: UserService, private router: Router) { }
 
   ngOnInit() { }
 
@@ -31,32 +33,41 @@ export class LoginComponent implements OnInit {
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }
-
   loginUser(data: any) {
+    if (this.isLoggingIn) {
+      // If login is already in progress, return to avoid multiple calls
+      return;
+    }
+
+    this.isLoggingIn = true; // Set the flag to indicate login is in progress
+
     this.username = data.username;
     this.password = data.password;
 
-    this.userService.validateUserCredentials(this.username, this.password).subscribe((isValid: boolean) => {
-      if(this.username == "Admin" && this.password == "admin@123") {
-        this.router.navigate(['admin/show']);
-        // localStorage.setItem("username", this.username);
-        // this.userService.names.next(this.username);
-        this.userService.setUsername(this.username);
-        this.toastrService.success('Logged in successfully as Admin!',)
-      }
-      else if (isValid) {
-        this.router.navigate(['/layout/home']);
-        localStorage.setItem("username", this.username);
-        // this.userService.names.next(this.username);
+    this.userService.validateUserCredentials(this.username, this.password).subscribe(
+      (isValid: boolean) => {
+        if (this.username === "Admin" && this.password === "admin@123") {
+          this.router.navigate(['admin/show']);
+          localStorage.setItem("username", this.username);
+          this.userService.setUsername(this.username);
+        } else if (isValid) {
+          this.router.navigate(['/layout/home']);
+          localStorage.setItem("username", this.username);
+          this.userService.setUsername(this.username);
+          this.toasterService.logInSuccessToaster();
+        } else {
+          this.logInFail = true;
+          this.toasterService.loginFailToaster();
+        }
 
-        this.userService.setUsername(this.username);
-        this.toastrService.success('Logged in successfully!', 'Success');
-      } 
-      else {
-        this.logInFail = true;
-        this.toastrService.error("invalid username")
+        // Finally, reset the flag to allow future logins
+        this.isLoggingIn = false;
+      },
+      (error) => {
+        // Handle errors if needed and reset the flag
+        this.isLoggingIn = false;
       }
-    });
+    );
   }
 }
 

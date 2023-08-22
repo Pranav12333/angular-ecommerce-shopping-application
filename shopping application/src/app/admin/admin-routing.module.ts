@@ -15,18 +15,18 @@ const routes: Routes = [
   {
     path:'add',
     component:AddDataComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
 
   {
     path:'product-details/:id',
     component:ProductDetailsComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
   {
     path:'update/:id',
     component:UpdateDataComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
 ];
 

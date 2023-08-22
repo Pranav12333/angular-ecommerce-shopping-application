@@ -14,10 +14,11 @@ export class authGuardGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isAuthenticated = this.userService.getUsernameValue();
+  ): boolean {
+    // Check if the username exists in local storage
+    const username = localStorage.getItem('username');
 
-    if (isAuthenticated !== null) {
+    if (username && username.trim() !== '') {
       // User is authenticated
       return true;
     } else {
@@ -25,4 +26,5 @@ export class authGuardGuard implements CanActivate {
       this.router.navigate(['/user-auth/login']);
       return false;
     }
+  
   }};

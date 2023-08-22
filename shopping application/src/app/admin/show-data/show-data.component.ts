@@ -19,15 +19,7 @@ export class ShowDataComponent {
     private router: Router) { }
 
   ngOnInit() {
-      let username= this.userService.getUsernameValue();
-      console.log(username);
-      
-
-    if (username != 'Admin') {
-      // this.router.navigate(['/user-auth/login']);
-      this.userService.clearUsername(); 
-    }
-    this.getData();
+    this.getData(); 
   }
 
   getData() {

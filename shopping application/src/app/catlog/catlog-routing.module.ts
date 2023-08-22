@@ -12,21 +12,21 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 const routes: Routes = [
   { path: 'all-product' , component: AllProductComponent, 
-  // canActivate: [authGuardGuard] 
+  canActivate: [authGuardGuard] 
 },
   { path: 'female-product' , component: FemaleProductComponent,
-  //  canActivate: [authGuardGuard] 
+   canActivate: [authGuardGuard] 
   },
   { path: 'male-product' , component: MaleProductComponent,
-  //  canActivate: [authGuardGuard] 
+   canActivate: [authGuardGuard] 
   },
   { path: 'product-details/:id' , component: ProductDetailsComponent, 
-  // canActivate: [authGuardGuard] 
+  canActivate: [authGuardGuard] 
 },
   { path: 'about-us' , component: AboutUsComponent },
   { path: 'contact-us' , component: ContactUsComponent },
   { path: 'add-to-cart' , component: AddToCartComponent,
-  //  canActivate: [authGuardGuard]
+   canActivate: [authGuardGuard]
    }
 ];
 
