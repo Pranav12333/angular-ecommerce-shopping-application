@@ -27,15 +27,16 @@ export class AddToCartComponent implements OnInit {
         this.addedProducts = res.reduce((accumulator, product) => {
           if (product.cart === 1) {
             product.quantity = 1;
-            this.totalprice += product.price;
+
+            const priceNumber = parseFloat(product.price.replace(/[₹,]/g, ''));
+            this.totalprice += priceNumber;
             accumulator.push(product);
           }
           return accumulator;
         }, []);
         
         this.totalQuantity = this.addedProducts.length;
-      }
-    );
+      });
   }
   
   incrementValue(item: any, price: number) {

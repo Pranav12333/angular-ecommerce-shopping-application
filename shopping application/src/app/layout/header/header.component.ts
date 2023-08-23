@@ -87,6 +87,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.userService.clearUsername();
     this.username = null;
+    localStorage.removeItem('username')
     this.toasterService.logOutToaster();
   }
 

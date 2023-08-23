@@ -9,5 +9,4 @@ export class RupeeFormatPipe implements PipeTransform {
     const rupeesValue = value * 2;
     return `₹${rupeesValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
   }
-
 }

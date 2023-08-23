@@ -3,7 +3,7 @@ $primary-color: #770dce;
 $dark-background: #9b9292;
 $dark-border: #770dce;
 $hover-indicator-color: #337dcb;
-$hover-indicator-border: #1470c5;
+$hover-indicator-border: #2376ce;
 $carousel-caption-bg: rgba(49, 21, 116, 0.808);
 $carousel-caption-shadow: rgba(31, 11, 79, 0.915);
 $carousel-caption-hover-bg: rgba(15, 30, 167, 0.841);
@@ -25,7 +25,8 @@ $carousel-caption-hover-shadow: rgba(0, 0, 0, 0.924);
 
 // General styles
 img {
-  height: 28rem;
+  height: auto;
+  max-width: 100%;
 }
 
 // Adjust the length of the range input
@@ -52,7 +53,7 @@ img {
 
     @include hover-active {
       background-color: $hover-indicator-color;
-      box-shadow: 0px 0px 11px rgb(0, 0, 0);
+      box-shadow: 0px 0px 4px rgb(0, 0, 0);
       border: 2px solid $hover-indicator-border;
     }
 
@@ -61,7 +62,7 @@ img {
       background-color: $primary-color + a8;
 
       @include hover-active {
-        background-color: $carousel-caption-hover-bg; // Corrected variable name
+        background-color: $carousel-caption-hover-bg; 
       }
     }
   }

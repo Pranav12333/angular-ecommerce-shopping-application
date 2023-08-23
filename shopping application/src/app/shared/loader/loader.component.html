@@ -1,3 +1,5 @@
 <!-- loader.component.html -->
-<div class="loader" *ngIf="isLoading"></div>
-<button (click)="hideLoader()">loader</button>
+<div class="loader-container" *ngIf="isLoading$ | async">
+    <div class="loader"></div>
+  </div>
+  
