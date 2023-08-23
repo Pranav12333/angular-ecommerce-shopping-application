@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'product-details/:id' , component: ProductDetailsComponent, 
   canActivate: [authGuardGuard] 
 },
-  { path: 'about-us' , component: AboutUsComponent },
+  { path: 'about-us' , component: AboutUsComponent }, 
   { path: 'contact-us' , component: ContactUsComponent },
   { path: 'add-to-cart' , component: AddToCartComponent,
    canActivate: [authGuardGuard]

@@ -1,14 +1,30 @@
 <div class="col-lg-10 col-md-8 col-sm-12 m-4 product-container mx-auto" *ngFor="let item of productData">
-    <div class="row align-items-center">
-      <div class="image-container col-lg-3 col-md-6 col-sm-12 m-5">
-        <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
-      </div>
-      <div class="content col-lg-7 col-md-6 col-sm-12">
-        <h5 class="card-title">{{item.category}}</h5>
-        <h5 class="card-title">{{item.title}}</h5>
-        <p><b class="card-text price">Price: {{ item.price | rupeeFormat }}</b></p> 
-        <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
-        <p class="card-text">{{item.description}}</p>
-      </div>
+  <div class="row align-items-center">
+    <div class="image-container col-lg-3 col-md-6 col-sm-12 m-5">
+      <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
     </div>
+    <div class="content col-lg-7 col-md-6 col-sm-12">
+      <h5 class="card-title">{{item.category}}</h5>
+      <h5 class="card-title">{{item.title}}</h5>
+      <p><b class="card-text price">Price: {{ item.price | rupeeFormat }}</b></p>
+      <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
+      <p class="card-text">{{item.description}}</p>
+      <button class="btn btn-outline-secondary mb-3 btn-size" (click)="review()"> Review the product </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="show-review m-5">
+  <h2>Product Reviews</h2>
+  <!-- Display existing reviews (if any) -->
+  <div class="existing-reviews">
+    <div *ngFor="let review of reviewData " class="mb-3">
+      <div class="user-info"> Name :
+        <span class="user-name">{{ review.userName }}</span>
+      </div>
+      <p class="review-text"> Review : {{ review.reviewText }}</p>
+      <p class="text-muted">Posted on {{ review.date | date: 'dd/MM/yyyy' }} at {{ review.date | date: 'h:mm a' }}</p>
+    </div>
+  </div>
 </div>

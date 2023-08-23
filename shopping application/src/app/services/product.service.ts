@@ -58,6 +58,13 @@ export class ProductService {
   getWomensWearDropdown(): Observable<any[]>{
     return this.http.get<any[]>("http://localhost:3000/womensWearDropdown");
   }
+  getProductReview(){
+    return this.http.get("http://localhost:3000/reviewsData");
+  }
+  postProductReview(data:any){
+    return this.http.post("http://localhost:3000/reviewsData",data);
+  }
+
   getAllProduct(): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:3000/allProduct");
   }

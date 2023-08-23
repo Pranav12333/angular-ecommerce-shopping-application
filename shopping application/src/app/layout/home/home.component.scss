@@ -16,6 +16,7 @@ $carousel-caption-hover-shadow: rgba(0, 0, 0, 0.924);
       @content;
     }
   }
+
   &:active {
     .touch & {
       @content;
@@ -25,8 +26,19 @@ $carousel-caption-hover-shadow: rgba(0, 0, 0, 0.924);
 
 // General styles
 img {
-  height: auto;
-  max-width: 100%;
+  height: 26rem;
+}
+
+@media (max-width: 1100px) {
+  img {
+    height: 16rem;
+  }
+}
+
+@media (max-width: 667px) {
+  img {
+    height: 12rem;
+  }
 }
 
 // Adjust the length of the range input
@@ -62,16 +74,15 @@ img {
       background-color: $primary-color + a8;
 
       @include hover-active {
-        background-color: $carousel-caption-hover-bg; 
+        background-color: $carousel-caption-hover-bg;
       }
     }
   }
 }
 
-
 .carousel-caption {
   position: absolute;
-  margin: 2rem auto;
+  margin: 0rem auto;
   top: 50%;
   left: 50%;
   cursor: pointer;
@@ -81,9 +92,8 @@ img {
 
 .carousel-caption h3 {
   width: 13rem;
-  height: 2.5;
+  padding: 0.8rem;
   margin: auto;
-  padding: 10px 20px;
   background-color: $carousel-caption-bg;
   border-radius: 0.7rem;
   font-size: 1rem;
@@ -96,6 +106,33 @@ img {
   }
 }
 
+@media (max-width: 1100px) {
+  .carousel-caption h3 {
+    width: 9rem;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    font-size: 0.75rem;
+    box-shadow: 0 0px 4px $carousel-caption-shadow;
+
+    @include hover-active {
+      box-shadow: 0 0px 9px $carousel-caption-hover-shadow;
+    }
+  }
+}
+
+@media (max-width: 667px) {
+  .carousel-caption h3 {
+    width: 6rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.4rem;
+    font-size: 0.5rem;
+    box-shadow: 0 0px 4px $carousel-caption-shadow;
+
+    @include hover-active {
+      box-shadow: 0 0px 7px $carousel-caption-hover-shadow;
+    }
+  }
+}
 
 // Custom carousel control arrows
 .carousel-control-prev,
@@ -199,5 +236,3 @@ img {
 .price-range {
   margin: auto;
 }
-
-

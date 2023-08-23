@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { toArray } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -12,9 +12,9 @@ export class ProductDetailsComponent {
   productId: any;
   productData: any;
   totalQuantity: any;
+  reviewData: any;
 
-
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
     this.getProductDetailsById();
@@ -23,7 +23,7 @@ export class ProductDetailsComponent {
     this.productService.totalQuantity$.subscribe((quantity) => {
       this.totalQuantity = quantity;
     });
-
+    this.showReviewFun();
   }
 
   private updateTotalQuantity() {
@@ -63,5 +63,17 @@ export class ProductDetailsComponent {
     this.productService.compareData().subscribe(products => {
     });
   }
+
+  review() {
+    this.router.navigate(['/user-review',this.productId]);
+  }
+
+  showReviewFun() {
+    this.productService.getProductReview().subscribe((res) => {
+      this.reviewData = res;
+    })
+  }
+
+
 }
 

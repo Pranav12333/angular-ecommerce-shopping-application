@@ -6,18 +6,17 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./all-product.component.scss']
 })
 export class AllProductComponent {
-  allProduct:any=[];
+  allProduct: any = [];
   constructor(private productService: ProductService) {
   }
 
   ngOnInit() {
     this.getAllData();
   }
-  
+
   getAllData() {
     this.productService.getAllProduct().subscribe((res) => {
-      this.allProduct=res;
+      this.allProduct = res;
     })
   }
-
 }
