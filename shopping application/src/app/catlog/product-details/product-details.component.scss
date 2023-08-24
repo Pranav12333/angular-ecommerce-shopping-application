@@ -17,5 +17,36 @@
 }
 
 
+/* Style the Product Reviews container */
+.show-review {
+  background-color: #ffffff;
+  border: 1px solid #c5c5c5;
+  border-radius: 12px;
+  box-shadow: 0px 2px 6px rgba(159, 70, 122, 0.515);
 
+}
 
+/* Style individual review items */
+.review-item {
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 6px rgba(159, 70, 122, 0.167);
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.user-info {
+  font-weight: bold;
+}
+
+.review-text {
+  margin-top: 10px;
+}
+
+.text-muted {
+  font-size: 14px;
+}
+
+/* Style the "Product Reviews" title */
+.show-review h2 {
+  font-size: 24px;
+}

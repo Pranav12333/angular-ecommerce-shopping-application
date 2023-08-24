@@ -14,6 +14,7 @@ export class ProductDetailsComponent {
   totalQuantity: any;
   reviewData: any;
 
+
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
   ngOnInit() {

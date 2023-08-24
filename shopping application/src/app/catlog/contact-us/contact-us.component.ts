@@ -6,22 +6,12 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent {
 
-  showProductDropdown: any[] = [];
   
 
-  constructor(private productService:ProductService){}
+  constructor(){}
 
-  ngOnInit(){
-    this.ShowProductDropdownFun();
-  }
-
-  ShowProductDropdownFun() {
-    this.productService.getShowProductDropdown().subscribe((res) => {
-      this.showProductDropdown = res;
-    });
-  }
 
   
 }

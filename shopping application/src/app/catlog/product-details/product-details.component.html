@@ -1,4 +1,4 @@
-<div class="col-lg-10 col-md-8 col-sm-12 m-4 product-container mx-auto" *ngFor="let item of productData">
+<div class="col-lg-10 col-md-8 col-sm-12 m-2 product-container mx-auto" *ngFor="let item of productData">
   <div class="row align-items-center">
     <div class="image-container col-lg-3 col-md-6 col-sm-12 m-5">
       <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
@@ -13,35 +13,33 @@
     </div>
   </div>
 </div>
-
-
-<div class="show-review m-5">
-
-  <h2>Product Reviews</h2>
+  
+<div class="show-review p-4 w-75 mx-auto">
+  <h2 class="p-2 mb-2">Product Reviews</h2>
 
   <!-- Display existing reviews (if any) -->
   <div class="existing-reviews">
-    <div *ngFor="let review of reviewData " class="mb-3">
-      <div class="user-info"> Name :
+    <div *ngFor="let review of reviewData; let i = index" class="review-item mb-3 p-4">
+      <b>Review {{ i + 1 }} of {{ reviewData.length }}</b>
+
+      <div class="user-info mt-3"> Name :
         <span class="user-name">{{ review.userName }}</span>
       </div>
-
-      <!-- Add this section to display user ratings -->
-      <!-- <div class="user-ratings">
-        <span class="star-icon" *ngFor="let star of [1, 2, 3, 4, 5]" [class.checked]="star <= productData.ratingValue">
-          <i class="fa fa-star"></i>
-        </span>
-        <span class="rating-value">{{ productData.ratingValue }} / 5</span>
-      </div> -->
-
+      
       <!-- description -->
       <p class="review-text"> Review : {{ review.reviewText }}</p>
 
       <!-- date -->
       <p class="text-muted">Posted on {{ review.date | date: 'dd/MM/yyyy' }} at {{ review.date | date: 'h:mm a' }}</p>
-
+      
+      <!-- Increment the count as the loop iterates -->
     </div>
-
   </div>
 
 </div>
+
+
+
+
+
+
