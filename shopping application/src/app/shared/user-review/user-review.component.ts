@@ -16,8 +16,8 @@ export class UserReviewComponent implements OnInit {
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {
     this.reviewForm = new FormGroup({
-      userName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("[A-Za-z]+")]),
-      reviewText: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(400), Validators.pattern("[A-Za-z]+")]),
+      userName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[A-Za-z ]+$")]),
+      reviewText: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(400)]),   
       date: new FormControl(''),
       productReviewId: new FormControl(null),
       ratingValue: new FormControl(null)
@@ -36,7 +36,6 @@ export class UserReviewComponent implements OnInit {
   getFormControl(controlName: string) {
     return this.reviewForm.get(controlName);
   }
-
 
   setRating(rating: number) {
     this.selectedRating = rating;
