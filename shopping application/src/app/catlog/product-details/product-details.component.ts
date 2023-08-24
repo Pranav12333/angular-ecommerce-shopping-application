@@ -79,7 +79,7 @@ export class ProductDetailsComponent {
   }
 
   review() {
-    this.router.navigate(['/user-review',this.productId]);
+    this.router.navigate(['/user-review', this.productId]);
   }
 
 
