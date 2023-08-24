@@ -19,11 +19,11 @@ export class ProductDetailsComponent {
   ngOnInit() {
     this.getProductDetailsById();
     this.getProductsToProceed();
+    this.getProductReviewById();
 
     this.productService.totalQuantity$.subscribe((quantity) => {
       this.totalQuantity = quantity;
     });
-    this.showReviewFun();
   }
 
   private updateTotalQuantity() {
@@ -38,6 +38,20 @@ export class ProductDetailsComponent {
       this.productData = res;
     })
   }
+
+  getProductReviewById() {
+    this.productId = this.route.snapshot.paramMap.get('id');
+    this.productService.getProductReview().subscribe((res) => {
+      // Ensure res is an array, and then filter the reviews based on productReviewId
+      if (Array.isArray(res)) {
+        this.reviewData = res.filter((review: any) => review.productReviewId === this.productId);
+      } else {
+        // Handle the case where res is not an array (e.g., if the API returns a single object)
+        this.reviewData = [];
+      }
+    });
+  }
+  
 
   adding() {
     if (this.productData && this.productData.length > 0) {
@@ -66,12 +80,6 @@ export class ProductDetailsComponent {
 
   review() {
     this.router.navigate(['/user-review',this.productId]);
-  }
-
-  showReviewFun() {
-    this.productService.getProductReview().subscribe((res) => {
-      this.reviewData = res;
-    })
   }
 
 

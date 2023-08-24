@@ -9,14 +9,16 @@
             </div>
             <div class="form-group">
                 <label for="reviewText">Your Review</label>
-                <textarea id="reviewText" formControlName="reviewText" class="form-control" rows="4"
-                    required></textarea>
+                <textarea id="reviewText" formControlName="reviewText" class="form-control" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <!-- Include the star-rating component -->
+                <app-star-rating formControlName="rating"></app-star-rating>
             </div>
             <input type="hidden" formControlName="date">
 
-            <button type="submit" class="btn btn-primary" (click)="submitReview(reviewForm.value)">Submit
-                Review</button>
+            <button type="submit" class="btn btn-primary" (click)="submitReview(reviewForm.value)">Submit Review</button>
         </form>
     </div>
 </div>
-

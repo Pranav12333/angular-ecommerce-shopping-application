@@ -71,6 +71,9 @@ export class ProductService {
   getDataById(id: any, data: any) {
     return this.http.get(`http://localhost:3000/allProduct/${id}`, data);
   }
+  getReviewById(id: any, data:any){
+    return this.http.get(`http://localhost:3000/reviewsData/${id}`,data);
+  }
   postData(data: any) {
     return this.http.post("http://localhost:3000/allProduct", data);
   }
