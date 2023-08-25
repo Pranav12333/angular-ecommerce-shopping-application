@@ -52,7 +52,6 @@ export class ProductDetailsComponent {
       }
     });
   }
-  
 
   adding() {
     if (this.productData && this.productData.length > 0) {
@@ -74,6 +73,10 @@ export class ProductDetailsComponent {
     }
   }
 
+  buying(){
+    this.router.navigate(['payment'])
+  }
+  
   getProductsToProceed() {
     this.productService.compareData().subscribe(products => {
     });

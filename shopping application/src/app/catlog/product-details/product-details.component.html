@@ -7,7 +7,8 @@
       <h5 class="card-title">{{item.category}}</h5>
       <h5 class="card-title">{{item.title}}</h5>
       <p><b class="card-text price">Price: {{ item.price | rupeeFormat }}</b></p>
-      <button class="btn btn-primary mb-3 btn-size" (click)="adding()">Add to cart</button>
+      <button class="btn btn-outline-primary m-3 btn-size" (click)="adding()">Add to cart</button>
+      <button class="btn btn-success m-3 btn-size" (click)="buying()">Buy now</button>
       <p class="card-text">{{item.description}}</p>
       <button class="btn btn-outline-secondary mb-3 btn-size" (click)="review()"> Review the product </button>
     </div>

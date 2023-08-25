@@ -41,8 +41,10 @@ export class AddToCartComponent implements OnInit {
   
   incrementValue(item: any, price: number) {
     if (item.quantity < 10) {
+      
       item.quantity++;
-      this.totalprice += price;
+      const priceNumber = parseFloat(item.price.replace(/[₹,]/g, ''));
+      this.totalprice += priceNumber;
     }
   }
 

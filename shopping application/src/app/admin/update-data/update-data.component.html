@@ -1,6 +1,8 @@
 <div class="container m-auto my-5">
   <div class="border p-5">
-    <h1 class="heading px-2">Update data</h1>
+    <div class="d-flex justify-content-center mb-4">
+      <h1 class="heading px-3 py-2">Update data</h1>
+    </div>
 
     <form [formGroup]="dataForm">
 
@@ -16,7 +18,7 @@
       <div class="nav-item dropdown">
         <select class="form-select" *ngIf="femaleDropdown">
           <option *ngFor="let optionWear of womensWearDropdown" [value]="optionWear.value"
-          [selected]="optionWear.value == allData.category">{{ optionWear.label }}
+            [selected]="optionWear.value == allData.category">{{ optionWear.label }}
           </option>
         </select>
       </div>

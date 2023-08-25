@@ -6,10 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; 
+import { NgbModule } from 'ngx-bootstrap'; 
 
 
 @NgModule({
@@ -25,8 +28,12 @@ import { SharedModule } from "./shared/shared.module";
         LayoutModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        FormsModule,
         ToastrModule.forRoot(),
-        SharedModule
+        SharedModule,
+        BsDatepickerModule.forRoot(),
+        NgbModule,
+       
     ]
 })
 export class AppModule { }
