@@ -63,20 +63,21 @@
 </div>
 
 <div class="container">
-  <div class="row justify-content-center scroll-container">
+  <div class="row justify-content-center">
     <!-- Use the appropriate array based on the flag -->
-    <div class="col-lg-3" *ngFor="let item of (showFilteredProducts ? filteredProducts :  allProduct  )">
+    <div class="col-lg-2 col-md-4 col-sm-6 my-3" *ngFor="let item of (showFilteredProducts ? filteredProducts : allProduct)">
       <div class="card">
-        <img class="card-img-top" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image"
-          alt="Card image cap">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">{{ item.category }}</h5>
-          <h5 class="card-title">{{ item.title }}</h5>
+        <img class="card-img-top" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image" alt="Card image cap">
+        <div class="card-body">
+          <p>{{ item.category }}</p>
+          <p>{{ item.title }}</p>
           <b class="card-text">Price:{{ item.price | rupeeFormat }}</b>
+          <div class="d-flex justify-content-between mt-2">
+            <button class="btn btn-outline-secondary btn-sm" routerLink="/catlog/product-details/{{item.id}}">Buy Now</button>
+            <button class="btn btn-outline-secondary btn-sm" routerLink="/catlog/product-details/{{item.id}}">See detail</button>
+          </div>
         </div>
       </div>
-      <button class="btn btn-outline-secondary mx-auto mt-3 d-flex "
-        routerLink="/catlog/product-details/{{item.id}}">buy now</button>
     </div>
   </div>
 </div>

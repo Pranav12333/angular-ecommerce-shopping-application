@@ -159,7 +159,6 @@ img {
 .form-label {
   font-size: 18px;
   color: #33326d;
-  margin-bottom: 0.6rem;
 }
 
 .form-select {
@@ -215,7 +214,7 @@ img {
 
 /* Card styles */
 .card {
-  height: 70%;
+  height: 85%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border-radius: 7px;
@@ -227,12 +226,11 @@ img {
 }
 
 .card-img-top {
-  height: 70%;
+  height: 50%;
   width: 100%;
   border-radius: 7px 7px 0 0;
 }
 
 /* Price text style */
-.price-range {
-  margin: auto;
-}
+
+/* i want to show 6 cards in one line want to give gap between both buttons buy now and see products without giving manually margin*/

@@ -12,7 +12,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; 
-import { NgbModule } from 'ngx-bootstrap'; 
 
 
 @NgModule({
@@ -32,7 +31,7 @@ import { NgbModule } from 'ngx-bootstrap';
         ToastrModule.forRoot(),
         SharedModule,
         BsDatepickerModule.forRoot(),
-        NgbModule,
+  
        
     ]
 })
