@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
     private router: Router, private userService: UserService,
     private productService: ProductService,
     private adminService: AdminService,
-    private toasterService:ToasterService,
+    private toasterService: ToasterService,
     private sharedService: SharedService) {
 
     this.userService.username$.subscribe((names) => {

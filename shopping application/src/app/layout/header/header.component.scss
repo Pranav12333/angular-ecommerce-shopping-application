@@ -1,33 +1,42 @@
-.navbar{
-    background:linear-gradient(45deg, #9787bddc, #8eb3e6dc, #da93e2dc) !important;;  
+.navbar {
+  background: linear-gradient(45deg, #9787bddc, #8eb3e6dc, #da93e2dc) !important;
+  ;
 }
+
 .search {
   display: flex;
-  align-items: center; border-radius: 20px; 
+  align-items: center;
+  border-radius: 20px;
   width: 21rem;
-  > input {
+
+  >input {
     width: 12rem;
     background-color: rgb(255 255 255 / 47%);
     border: 2px solid rgb(113 137 212 / 84%);
     box-shadow: 0px 0px 15px rgb(113, 138, 212);
     border-radius: 5px;
     padding: 5px;
+
     &::placeholder {
       padding: 10px;
       color: rgb(12, 8, 8);
       opacity: 0.8;
     }
+
     &:hover {
-      border-color: #8b3cc096; /* Adjust the border color on hover */
-      box-shadow: 0px 0px 15px rgb(183 189 207) /* Add a different box shadow on hover */
+      border-color: #8b3cc096;
+      /* Adjust the border color on hover */
+      box-shadow: 0px 0px 15px rgb(183 189 207)
+        /* Add a different box shadow on hover */
     }
   }
 
-  > .search-icon {
+  >.search-icon {
     right: 15px;
     margin-left: 1%;
     color: #ffffffc4;
     cursor: pointer;
+
     i {
       font-size: 20px;
     }
@@ -36,13 +45,40 @@
 
 /* Add the transition property to the font color of anchor tags inside the navbar list items */
 .navbar-nav li a {
-  color: #770666; /* Change the font color to your desired color when hovering */
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smoothly change font color over 0.2 seconds */
+  color: #770666;
+  /* Change the font color to your desired color when hovering */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  /* Smoothly change font color over 0.2 seconds */
 }
 
 /* When hovering over the anchor tag, change the font color */
 .navbar-nav li a:hover {
-  color: #001693; /* Change the font color to your desired color when hovering */
+  color: #001693;
+  /* Change the font color to your desired color when hovering */
+  transform: scale(1.05);
+}
+
+.nav-item {
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  border-width: 0 1px 2px 1px;
+  border-style: none solid solid solid;
+  border-color: transparent #245aef64 #1b118982 #245aef64;
+  box-shadow: 0px 0px 0px rgba(9, 6, 212, 0.211),
+    0px 0px 0px #245aef64,
+    0px 2px 10px #1d09f782,
+    0px 2px 10px #24ef5364;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  /* Smoothly change font color over 0.2 seconds */
+}
+
+.nav-item:hover {
+  /* Add your hover styles here */
+  border-color: #382cb987;
+  color: #001172;
+  background-color: #a3c1e62f;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
 
@@ -54,7 +90,7 @@
   /* Add your desired font color for the dropdown options */
   color: #3e0335;
   /* Customize the border, padding, and other styles as needed */
-  border: 1px solid  #cbd0f1ca;
+  border: 1px solid #cbd0f1ca;
   border-radius: 10px;
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.282);
 
@@ -91,7 +127,8 @@
   height: 30px;
   width: 30px;
   margin: 10px;
-  cursor: pointer; /* Add cursor pointer to indicate interactivity */
+  cursor: pointer;
+  /* Add cursor pointer to indicate interactivity */
 }
 
 .cart-container .bi-cart3 {
@@ -103,11 +140,16 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  border-radius: 50%; /* Make the badge circular */
-  background-color: rgba(231, 45, 16, 0.82); /* Customize badge background color */
-  color: #fff; /* Customize badge text color */
-  font-size: 12px; /* Customize badge font size */
-  padding: 5px; /* Adjust padding for the badge */
+  border-radius: 50%;
+  /* Make the badge circular */
+  background-color: rgba(231, 45, 16, 0.82);
+  /* Customize badge background color */
+  color: #fff;
+  /* Customize badge text color */
+  font-size: 12px;
+  /* Customize badge font size */
+  padding: 5px;
+  /* Adjust padding for the badge */
 }
 
 /* Hide the badge when there are no items in the cart */
