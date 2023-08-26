@@ -1,0 +1,21 @@
+.product-container-inner {
+  text-align: center; 
+  
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  transition: transform 0.3s ease; 
+}
+
+.image-container:hover img {
+  transform: scale(1.06); 
+}
+
+
+
+
