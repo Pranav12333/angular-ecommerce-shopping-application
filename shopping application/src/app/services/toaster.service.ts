@@ -24,14 +24,14 @@ export class ToasterService {
   }
 
   loginFailToaster() {
-    this.toastrService.success('log in failed', '', {
+    this.toastrService.error('log in failed', '', {
       timeOut: 1000, 
       positionClass: 'toast-top-center'
     });
   }
 
   logOutToaster() {
-    this.toastrService.success('logged out', '', {
+    this.toastrService.info('logged out', '', {
       timeOut: 1000, 
       positionClass: 'toast-top-center'
     });

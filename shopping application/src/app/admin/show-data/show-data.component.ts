@@ -13,10 +13,12 @@ export class ShowDataComponent {
 
   allData: any = [];
 
-  constructor(private productService: ProductService,
+  constructor(
+    private productService: ProductService,
     private userService: UserService,
     private adminService: AdminService,
-    private router: Router) { }
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.getData(); 
@@ -25,7 +27,7 @@ export class ShowDataComponent {
   getData() {
     this.productService.getAllProduct().subscribe((res) => {
       this.allData = res;
-    })
+    });
   }
 
   deleteData(id: any) {

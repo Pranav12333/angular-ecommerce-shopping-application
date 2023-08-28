@@ -13,14 +13,14 @@ import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; 
 import { LoaderService } from './services/loader.service';
-import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule  } from "ngx-ui-loader";
 
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
-    providers: [],
+    providers: [LoaderService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -34,6 +34,11 @@ import { NgxUiLoaderModule } from "ngx-ui-loader";
         SharedModule,
         BsDatepickerModule.forRoot(),
         NgxUiLoaderModule,
+        NgxUiLoaderModule.forRoot({}),
+        NgxUiLoaderRouterModule.forRoot({ showForeground: true,
+             }),
+            
+           
     ]
 })
 export class AppModule { }

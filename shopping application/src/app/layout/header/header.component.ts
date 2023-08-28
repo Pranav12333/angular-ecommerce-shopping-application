@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { ToasterService } from 'src/app/services/toaster.service';
@@ -11,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
 
   username: any;
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
   totalQuantity: any;
 
   constructor(
+    private loaderService:LoaderService,
     private router: Router, private userService: UserService,
     private productService: ProductService,
     private adminService: AdminService,
@@ -45,7 +48,7 @@ export class HeaderComponent implements OnInit {
       this.totalQuantity = quantity;
     });
     this.updateTotalQuantity();
-    this.username = localStorage.getItem('username')
+    this.username = localStorage.getItem('username');
   }
 
   filterProductsByTitle(event: Event) {
@@ -85,6 +88,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.loaderService.hideloader();
     this.userService.clearUsername();
     this.username = null;
     localStorage.removeItem('username')

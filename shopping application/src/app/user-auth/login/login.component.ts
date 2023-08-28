@@ -47,37 +47,28 @@ export class LoginComponent implements OnInit {
 
     this.username = data.username;
     this.password = data.password;
-    this.loaderService.showloader();
 
-    this.userService.validateUserCredentials(this.username, this.password).subscribe(
-      (isValid: boolean) => {
-        if (this.username === "Admin" && this.password === "admin@123") {
-          this.router.navigate(['admin/show']);
-          localStorage.setItem("username", this.username);
-          this.userService.setUsername(this.username);
-          this.toasterService.logInSuccessToaster();
 
-          this.loaderService.showloader();
-          // Simulate login request to the server
-          new Promise<void>((resolve, reject) => {
-            setTimeout(() => {
-              // Successful login logic
-              this.loaderService.hideloader(); // Hide loader when login is complete
-              resolve();
-            }, 3000); // Simulate a 2-second login request
-          });
-        } else if (isValid) {
-          this.router.navigate(['/layout/home']);
-          localStorage.setItem("username", this.username);
-          this.userService.setUsername(this.username);
-          this.toasterService.logInSuccessToaster();
-        } else {
-          this.logInFail = true;
-          this.toasterService.loginFailToaster();
-        }
-        // Finally, reset the flag to allow future logins
-        this.isLoggingIn = false;
-      },
+    this.userService.validateUserCredentials(this.username, this.password).subscribe((isValid: boolean) => {
+      if (this.username === "Admin" && this.password === "admin@123") {
+        localStorage.setItem("username", this.username);
+        this.userService.setUsername(this.username);
+        this.toasterService.logInSuccessToaster();
+        this.loaderService.showloader();
+        this.router.navigate(['admin/show']);
+      } else if (isValid) {
+        this.loaderService.showloader();
+        localStorage.setItem("username", this.username);
+        this.userService.setUsername(this.username);
+        this.toasterService.logInSuccessToaster();
+        this.router.navigate(['/layout/home']);
+      } else {
+        this.logInFail = true;
+        this.toasterService.loginFailToaster();
+      }
+      // Finally, reset the flag to allow future logins
+      this.isLoggingIn = false;
+    },
       (error) => {
         // Handle errors if needed and reset the flag
         this.isLoggingIn = false;

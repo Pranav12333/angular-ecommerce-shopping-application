@@ -18,7 +18,6 @@ export class AllProductComponent {
   getAllData() {
     this.productService.getAllProduct().subscribe((res) => {
       this.allProduct = res;
-      this.loaderService.loadingSubject.next(true);
     })
   }
 }
