@@ -1,0 +1,79 @@
+.container {
+  max-width: 500px; /* Increase the width for better alignment with about-us */
+  margin: auto;
+  padding: 0; /* Remove padding */
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Styles for the section title container */
+.section-title {
+  display: inline-block;
+  border-radius: 8px;
+  border-width: 0 1px 2px 1px;
+  border-style: none solid solid solid;
+  border-color: transparent #245aef64 #1b118982 #245aef64;
+  box-shadow: 0px 0px 0px rgba(9, 6, 212, 0.211),
+    0px 0px 0px #245aef64,
+    0px 2px 10px #1d09f782,
+    0px 2px 10px #24ef5364;
+}
+
+
+form {
+  background-color: #f8f9fa; // Light background color
+  border-radius: 22px;
+  box-shadow: 0px 0px 15px #c2c4c74f,
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  resize: none; // Prevent textarea from being resized
+}
+
+/* Center the form and apply box shadow */
+.section-title-box {
+  text-align: center;
+}
+
+
+
+/* Style for the form container */
+.contact-us-container {
+  max-width: 800px;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0.398);
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+/* Style for contact info row */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for contact info items */
+.contact-info {
+  flex-basis: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+// Media query for responsiveness
+@media (max-width: 768px) {
+  .container {
+      max-width: 100%; // Full width on small screens
+      padding: 10px; // Reduce padding on small screens
+  }
+
+  h1 {
+      font-size: 24px; // Smaller font size for headings
+  }
+}
