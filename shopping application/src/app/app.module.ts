@@ -13,6 +13,7 @@ import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; 
 import { LoaderService } from './services/loader.service';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 @NgModule({
@@ -32,8 +33,7 @@ import { LoaderService } from './services/loader.service';
         ToastrModule.forRoot(),
         SharedModule,
         BsDatepickerModule.forRoot(),
-  
-       
+        NgxUiLoaderModule,
     ]
 })
 export class AppModule { }

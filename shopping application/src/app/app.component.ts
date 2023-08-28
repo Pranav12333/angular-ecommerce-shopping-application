@@ -9,13 +9,13 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AppComponent implements OnInit {
   title = 'e-commerce';
-  isLoading: any;
+  isLoading = true;
   constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
-    this.loaderService.loadingSubject.subscribe((res) => {
-      if (res) { this.isLoading = true } 
-      else { this.isLoading = false }
-    })
+    // this.loaderService.loadingSubject.subscribe((res) => {
+    //   if (res) { this.isLoading = true } 
+    //   else { this.isLoading = false }
+    // })
   }
 }
