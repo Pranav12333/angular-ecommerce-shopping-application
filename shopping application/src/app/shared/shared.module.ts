@@ -6,7 +6,7 @@ import { RupeeFormatPipe } from '../pipes/rupee-format.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { UserReviewComponent } from './user-review/user-review.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RatingModule } from 'primeng/rating';
+// import { RatingModule } from 'primeng/rating';
 import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { PaymentComponent } from './payment/payment.component';
     CommonModule,
     SharedRoutingModule,
     ReactiveFormsModule,
-    RatingModule
+    // RatingModule
   ],
   exports: [
     RupeeFormatPipe,

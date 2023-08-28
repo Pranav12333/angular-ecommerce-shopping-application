@@ -11,7 +11,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+// import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
 
 
@@ -31,12 +31,12 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
         FormsModule,
         ToastrModule.forRoot(),
         SharedModule,
-        BsDatepickerModule.forRoot(),
+        // BsDatepickerModule.forRoot(),
         NgxUiLoaderModule,
         NgxUiLoaderModule.forRoot({}),
         NgxUiLoaderRouterModule.forRoot({
             showForeground: true,
-        }),
+        })
 
 
     ]
