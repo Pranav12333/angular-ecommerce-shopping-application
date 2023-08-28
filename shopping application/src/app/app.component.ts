@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
 
  
   showLoader() {
-    console.log('showLoader function is called');
+    
     this.ngxLoader.start(); // Show the loader
   }
 
