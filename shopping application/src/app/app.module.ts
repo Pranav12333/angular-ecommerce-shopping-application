@@ -11,16 +11,15 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; 
-import { LoaderService } from './services/loader.service';
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule  } from "ngx-ui-loader";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
 
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
-    providers: [LoaderService],
+    providers: [],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -35,10 +34,11 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule  } from "ngx-ui-loader";
         BsDatepickerModule.forRoot(),
         NgxUiLoaderModule,
         NgxUiLoaderModule.forRoot({}),
-        NgxUiLoaderRouterModule.forRoot({ showForeground: true,
-             }),
-            
-           
+        NgxUiLoaderRouterModule.forRoot({
+            showForeground: true,
+        }),
+
+
     ]
 })
 export class AppModule { }

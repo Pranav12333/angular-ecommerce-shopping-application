@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { LoaderService } from './services/loader.service';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { SharedService } from './services/shared.service';
 import { timer } from 'rxjs';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -10,30 +11,37 @@ import { timer } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'e-commerce';
   isLoading = false;
-  constructor(private loaderService: LoaderService) { }
+  ngxUiLoaderConfig = {
+    bgsColor: 'white',             // Background spinner color
+    bgsOpacity: 0.5,             // Background spinner opacity
+    bgsSize: 60,                 // Background spinner size
+    bgsType: 'ball-spin-anticlockwise', // Background spinner type
+    fgsColor: 'white',            // Foreground spinner color
+    fgsSize: 60,                 // Foreground spinner size
+    fgsType: 'ball-spin-anticlockwise', // Foreground spinner type
+    text: 'Loading...',           // Text displayed while loading
+    textColor: '#FFFFFF',        // Text color
+    overlayColor: 'rgba(40, 40, 40, 0.8)', // Overlay color
+    overlayBorderRadius: '0',    // Overlay border radius
+  };
 
-  // ngOnInit() {
-  //   this.loaderService.loadingSubject.subscribe((res) => {
-  //     if (res) {
-  //       this.isLoading = true;
-  //     } else {
-  //       this.isLoading = false;
-  //     }
-  //     console.log(this.isLoading);
-  //   });
-  // }
+  showLoaderEvent: EventEmitter<any> = new EventEmitter();
+
+  constructor(private ngxLoader: NgxUiLoaderService) { }
+
   ngOnInit() {
-    this.loaderService.loadingSubject.subscribe((res) => {
-      if (res) {
-        this.isLoading = true;
-
-        // Automatically hide the loader after a custom duration (e.g., 3 seconds)
-        timer(3000).subscribe(() => {
-          // this.loaderService.hideloader();
-        });
-      } else {
-        // this.isLoading = false;
-      }
+    this.showLoaderEvent.subscribe(() => {
+      this.showLoader(); // Call showLoader function when the event is emitted
     });
+  }
+
+ 
+  showLoader() {
+    console.log('showLoader function is called');
+    this.ngxLoader.start(); // Show the loader
+  }
+
+  hideLoader() {
+    this.ngxLoader.stop(); // Hide the loader
   }
 }

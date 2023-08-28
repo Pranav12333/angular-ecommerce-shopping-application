@@ -1,9 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { ToasterService } from 'src/app/services/toaster.service';
-import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +18,10 @@ export class LoginComponent implements OnInit {
   logInFail: boolean = false;
   toastr: any;
   isLoggingIn: boolean = false;
+  @Output() triggerFunctionEvent: EventEmitter<void> = new EventEmitter<void>();
+
 
   constructor(private toasterService: ToasterService,
-    private loaderService: LoaderService,
     private userService: UserService,
     private router: Router) { }
 
@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
     this.showPassword = !this.showPassword;
   }
   loginUser(data: any) {
+    this.triggerFunctionEvent.emit();
+ 
     if (this.isLoggingIn) {
       // If login is already in progress, return to avoid multiple calls
       return;
@@ -48,17 +50,14 @@ export class LoginComponent implements OnInit {
     this.username = data.username;
     this.password = data.password;
 
-
     this.userService.validateUserCredentials(this.username, this.password).subscribe((isValid: boolean) => {
-      debugger
+
       if (this.username === "Admin" && this.password === "admin@123") {
         localStorage.setItem("username", this.username);
         this.userService.setUsername(this.username);
         this.toasterService.logInSuccessToaster();
-        this.loaderService.showloader();
         this.router.navigate(['admin/show']);
       } else if (isValid) {
-        this.loaderService.showloader();
         localStorage.setItem("username", this.username);
         this.userService.setUsername(this.username);
         this.toasterService.logInSuccessToaster();

@@ -1,7 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
-import { LoaderService } from 'src/app/services/loader.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { ToasterService } from 'src/app/services/toaster.service';
@@ -29,7 +28,6 @@ export class HeaderComponent implements OnInit {
   totalQuantity: any;
 
   constructor(
-    private loaderService:LoaderService,
     private router: Router, private userService: UserService,
     private productService: ProductService,
     private adminService: AdminService,

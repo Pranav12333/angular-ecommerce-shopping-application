@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoaderService } from 'src/app/services/loader.service';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 
