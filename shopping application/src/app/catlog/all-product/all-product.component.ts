@@ -1,4 +1,5 @@
 import { Component, importProvidersFrom } from '@angular/core';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-all-product',
@@ -7,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AllProductComponent {
   allProduct: any = [];
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private loaderService:LoaderService) {
   }
 
   ngOnInit() {
@@ -17,6 +18,7 @@ export class AllProductComponent {
   getAllData() {
     this.productService.getAllProduct().subscribe((res) => {
       this.allProduct = res;
+      this.loaderService.loadingSubject.next(true);
     })
   }
 }

@@ -7,7 +7,6 @@ import { LoaderService } from 'src/app/services/loader.service';
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent {
-  isLoading$ = this.loaderService.isLoading$;
   
   constructor(private loaderService: LoaderService){}
 }
