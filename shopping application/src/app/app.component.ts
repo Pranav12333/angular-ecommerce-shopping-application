@@ -29,10 +29,10 @@ export class AppComponent implements OnInit {
 
         // Automatically hide the loader after a custom duration (e.g., 3 seconds)
         timer(3000).subscribe(() => {
-          this.loaderService.hideloader();
+          // this.loaderService.hideloader();
         });
       } else {
-        this.isLoading = false;
+        // this.isLoading = false;
       }
     });
   }

@@ -88,7 +88,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.loaderService.hideloader();
+    // this.loaderService.hideloader();
     this.userService.clearUsername();
     this.username = null;
     localStorage.removeItem('username')

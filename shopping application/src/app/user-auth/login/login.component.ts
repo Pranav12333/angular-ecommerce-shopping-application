@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
 
 
     this.userService.validateUserCredentials(this.username, this.password).subscribe((isValid: boolean) => {
+      debugger
       if (this.username === "Admin" && this.password === "admin@123") {
         localStorage.setItem("username", this.username);
         this.userService.setUsername(this.username);
