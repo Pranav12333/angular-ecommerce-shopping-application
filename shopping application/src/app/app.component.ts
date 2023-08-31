@@ -10,13 +10,12 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 })
 export class AppComponent implements OnInit {
   title = 'e-commerce';
-  isLoading = false;
   ngxUiLoaderConfig = {
-    bgsColor: 'white',             // Background spinner color
-    bgsOpacity: 0.5,             // Background spinner opacity
+    bgsColor: 'red',             // Background spinner color
+    bgsOpacity: 1.0,             // Background spinner opacity
     bgsSize: 60,                 // Background spinner size
     bgsType: 'ball-spin-anticlockwise', // Background spinner type
-    fgsColor: 'white',            // Foreground spinner color
+    fgsColor: 'red',            // Foreground spinner color
     fgsSize: 60,                 // Foreground spinner size
     fgsType: 'ball-spin-anticlockwise', // Foreground spinner type
     text: 'Loading...',           // Text displayed while loading
@@ -25,25 +24,14 @@ export class AppComponent implements OnInit {
     overlayBorderRadius: '0',    // Overlay border radius
   };
 
-  showLoaderEvent: EventEmitter<any> = new EventEmitter();
+  constructor(private ngxUiLoaderService: NgxUiLoaderService) {  }
 
-  constructor(private ngxLoader: NgxUiLoaderService) { }
-
-  ngOnInit() {
-    this.showLoaderEvent.subscribe(() => {
-      this.showLoader(); // Call showLoader function when the event is emitted
-    });
-  }
-
-
-
- 
-  showLoader() {
+  ngOnInit() {  
     
-    this.ngxLoader.start(); // Show the loader
+    this.ngxUiLoaderService.stop();
+    this.ngxUiLoaderService.stopBackground("do-background-things");
+    this.ngxUiLoaderService.stopLoader("loader-01");
   }
 
-  hideLoader() {
-    this.ngxLoader.stop(); // Hide the loader
-  }
+
 }
