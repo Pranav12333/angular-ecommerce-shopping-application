@@ -31,9 +31,9 @@
   }
 
   >.search-icon {
-    right: 15px;
-    margin-left: 1%;
-    color:rgb(255 255 255 / 68%);
+
+    margin-left: -25%;
+    color: #030e1b9d;
     cursor: pointer;
 
     i {
@@ -89,7 +89,7 @@
 .nav-item.dropdown .form-select:hover {
   border-color: #ffffff8f;
   color: #001172;
-  background-color: #ffffff6f;
+  background-color: #ddd7d76f;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 

@@ -19,19 +19,24 @@
         <td height="100" width="280"><img [src]="item.image" alt="Product Image" height="100" width="85"
             [attr.src]="item.image" class="image" />
         </td>
+      
+
         <td class="col-2">
           <div class="input-group">
             <div class="input-group-prepend">
-              <button class="btn btn-secondary" (click)="decrementValue(item, item.price)">-</button>
+              <button class="btn btn-outline-secondary" (click)="decrementValue(item, item.price)">
+                <i class="fas fa-minus"></i>
+              </button>
             </div>
-            <input [id]="'quantityInput-' + i" type="number" class="form-control text-center"
-              [(ngModel)]="item.quantity" />
+            <input [id]="'quantityInput-' + i" type="number" class="form-control text-center" [(ngModel)]="item.quantity" />
             <div class="input-group-append">
-              <button class="btn btn-secondary" (click)="incrementValue(item, item.price)">+</button>
+              <button class="btn btn-outline-secondary" (click)="incrementValue(item, item.price)">
+                <i class="fas fa-plus"></i>
+              </button>
             </div>
           </div>
         </td>
-        <td height="100" width="150">{{ item.price | rupeeFormat }}</td>
+                <td height="100" width="150">{{ item.price | rupeeFormat }}</td>
         <td><button class="btn btn-danger" (click)="deleteProducts(item.id)">Delete</button></td>
       </tr>
     </tbody>

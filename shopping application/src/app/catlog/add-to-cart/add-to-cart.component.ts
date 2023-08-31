@@ -1,7 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +15,7 @@ export class AddToCartComponent implements OnInit {
   totalprice: number = 0;
   totalQuantity : number = 0;
 
-  constructor(private productService: ProductService, private sanitizer: DomSanitizer,  private router: Router) { }
+  constructor(private productService: ProductService, private router: Router) { }
   ngOnInit() {
     this.fatchData();
   }
