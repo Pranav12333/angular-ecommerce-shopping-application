@@ -8,10 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ContactUsComponent {
 
-  
-
   constructor(){}
-
 
   
 }

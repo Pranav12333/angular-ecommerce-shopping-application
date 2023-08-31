@@ -4,7 +4,7 @@
       <h3 class="text-center"> <i class="fas fa-user-plus"></i> User Registration</h3>
       <!-- email -->
       <label for="email" class="form-label pl-2 pt-3"> <i class="fas fa-envelope"></i> Email:</label>
-      <input type="email" formControlName="email" class="form-control form-field-shadow" placeholder="Enter your email">
+      <input type="email" formControlName="email" class="form-control form-field-shadow" placeholder="email@example.com">
       <p *ngIf="getFormControl('email')?.invalid && getFormControl('email')?.touched" class="text-danger m-0">
         <ng-container *ngIf="getFormControl('email')?.errors?.['required']"> <i
             class="fas fa-exclamation-circle"></i>Email is required.</ng-container>
@@ -85,11 +85,11 @@
           <!-- register button -->
           <button class="submit-btn mx-1 my-2 px-3 p-1"
             [disabled]="registerUserForm.invalid || !termsChecked || passwordsMatch()"
-            (click)="registerUser(registerUserForm.value)"> <i class="fas fa-user-plus"></i>Register</button>
+            (click)="registerUser(registerUserForm.value)"><i class="fa fa-paper-plane m-1" aria-hidden="true"></i>Register</button>
           <div *ngIf="logInFail" class="text-danger m-0">Username is already registered</div>
           <!-- log in button -->
           <button class="submit-btn mx-1 my-2 px-4 p-1" routerLink="/user-auth/login"> <i
-              class="fas fa-sign-in-alt"></i>Log in</button>
+              class="fas fa-sign-in-alt m-1"></i>Log in</button>
         </div>
       </div>
     </form>
