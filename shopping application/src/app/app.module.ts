@@ -13,6 +13,7 @@ import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
         NgxUiLoaderRouterModule.forRoot({
             showForeground: true,
         }),
+        FontAwesomeModule,
 
 
     ]

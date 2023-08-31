@@ -27,10 +27,6 @@ export class AppComponent implements OnInit {
   constructor(private ngxUiLoaderService: NgxUiLoaderService) {  }
 
   ngOnInit() {  
-    
-    this.ngxUiLoaderService.stop();
-    this.ngxUiLoaderService.stopBackground("do-background-things");
-    this.ngxUiLoaderService.stopLoader("loader-01");
   }
 
 

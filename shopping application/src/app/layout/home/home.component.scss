@@ -41,15 +41,6 @@ img {
   }
 }
 
-// Adjust the length of the range input
-.form-range {
-  width: 18rem;
-  background-color: $dark-background;
-  box-shadow: 0 0px 8px #{$dark-background}b5;
-  border-radius: 0.5rem;
-  padding: 0.3rem;
-}
-
 // Carousel indicators
 .carousel-indicators {
   li {
@@ -132,6 +123,16 @@ img {
       box-shadow: 0 0px 7px $carousel-caption-hover-shadow;
     }
   }
+}
+
+
+/* Center the price range container horizontally and vertically */
+.price-range {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 // Custom carousel control arrows
@@ -230,7 +231,3 @@ img {
   width: 100%;
   border-radius: 7px 7px 0 0;
 }
-
-/* Price text style */
-
-/* i want to show 6 cards in one line want to give gap between both buttons buy now and see products without giving manually margin*/

@@ -17,10 +17,11 @@
     </div>
 
     <ul class="navbar-nav ml-auto">
-      <div *ngIf="username">
-        <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="layout/home" (click)="showSlider()">Home</a></li>
-      </div>
+     
+        <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/layout/home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+      
       <li class="nav-item dropdown m-3" *ngIf="addProduct && username">
+        <i class="fa fa-angle-double-down"></i>
         <select class="form-select" (change)="navigateTo($event)">
           <option *ngFor="let optionAdd of addProductDropdown" [value]="optionAdd.value">{{ optionAdd.label }}</option>
         </select>
@@ -32,8 +33,10 @@
         </select>
       </li>
 
-      <li class="nav-item fs-6 m-3"> <a class="nav-link" routerLink="/catlog/contact-us">Contact Us</a></li>
-      <li class="nav-item fs-6 m-3"> <a class="nav-link" routerLink="/catlog/about-us">About Us</a></li>
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/contact-us"><i
+            class="fa fa-address-book m-1" aria-hidden="true"></i>Contact Us</a></li>
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/about-us"> <i class="fa  fa-info-circle m-1"
+            aria-hidden="true"></i>About Us</a></li>
 
       <div class="cart-container my-auto" *ngIf="username != 'Admin' && username != null">
         <i class="bi bi-cart3" routerLink="/catlog/add-to-cart">
@@ -47,14 +50,16 @@
       </div>
 
       <li class="fs-6 mx-3 m-2" *ngIf="!username">
-        <button class="btn btn-outline-primary m-2" routerLink="/user-auth/login">Login</button>
-        <button class="btn btn-outline-primary m-2" type="submit" routerLink="/user-auth/register">Register</button>
+        <button class="btn btn-outline-primary m-2" routerLink="/user-auth/login"> <i
+            class="fas fa-sign-in-alt m-1"></i>Login</button>
+        <button class="btn btn-outline-primary m-2" type="submit" routerLink="/user-auth/register"> <i
+            class="fas fa-user-plus m-1"></i> Register</button>
       </li>
 
       <li class="fs-6 mx-3 m-2" *ngIf="username">
-        <button class="btn btn-outline-primary m-2">{{ username }}</button>
+        <button class="btn btn-outline-primary m-2"><i class="fa fa-user" aria-hidden="true"></i> {{ username }} </button>
         <button class="btn btn-outline-primary m-2" type="submit" (click)="logout()"
-          routerLink="/user-auth/login">Logout</button>
+          routerLink="/user-auth/login"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button>
       </li>
     </ul>
   </div>
