@@ -41,13 +41,13 @@
         </div>
         <div class="text-center mt-4">
           <button class="submit-btn mx-1 px-3 py-1" (click)="loginUser(loginUserForm.value)">
-            <i class="fas fa-sign-in-alt"></i> Log in
+            <i class="fas fa-arrow-circle-right"></i> Log in
           </button>
           <div *ngIf="logInFail" class="text-danger">
             <i class="fas fa-exclamation-triangle"></i> Invalid username or password. Please try again.
           </div>
           <button class="submit-btn mx-1 px-2 py-1" routerLink="../register">
-            <i class="fas fa-user-plus"></i> Register
+            <i class="fa fa-paper-plane"></i> Register
           </button>
         </div>
       </form>

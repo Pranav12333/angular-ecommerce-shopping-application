@@ -13,7 +13,7 @@ export class ProductDetailsComponent {
   productData: any;
   totalQuantity: any;
   reviewData: any;
-
+  showFullDescription: boolean = false;
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
@@ -26,7 +26,11 @@ export class ProductDetailsComponent {
       this.totalQuantity = quantity;
     });
   }
+  toggleDescription() {
+    this.showFullDescription = !this.showFullDescription;
+  }
 
+  
   private updateTotalQuantity() {
     this.productService.compareData().subscribe((items) => {
       this.productService.updateTotalQuantity(items.length);

@@ -1,7 +1,7 @@
 <div class="container m-auto my-5">
   <div class="border p-5">
     <div class="d-flex justify-content-center mb-4">
-      <h1 class="heading px-3 py-2">Update data</h1>
+      <h4 class="heading px-3 py-2"> <i class="fas fa-edit mr-2"></i>Update data</h4>
     </div>
 
     <form [formGroup]="dataForm">
@@ -55,19 +55,20 @@
         </div>
       </div>
 
-
       <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" id="description" class="form-control" formControlName="description">
+        <textarea id="description" class="form-control" rows="5" formControlName="description" placeholder="Enter description"></textarea>
         <div *ngIf="dataForm.get('description')?.errors && dataForm.get('description')?.touched" class="text-danger">
           Description is required.
         </div>
       </div>
-
+      
       <div class="text-center">
         <button type="submit" class="btn btn-primary" [disabled]="dataForm.invalid" routerLink="/admin/show"
-          (click)="upadateData(dataForm.value)">Update data</button>
+          (click)="upadateData(dataForm.value)"> <i class="fas fa-edit mr-2"></i> Update data</button>
+        <button class="btn btn-secondary ml-3"  routerLink="/admin/show"><i class="fas fa-times"></i> Cancel</button>
       </div>
+      
     </form>
   </div>
 </div>
