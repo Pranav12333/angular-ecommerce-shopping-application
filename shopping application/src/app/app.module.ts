@@ -16,6 +16,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
