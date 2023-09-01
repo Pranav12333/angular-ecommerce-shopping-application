@@ -12,7 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
+import { NgxUiLoaderModule , NgxUiLoaderRouterModule } from "ngx-ui-loader";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -33,12 +33,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         FormsModule,
         ToastrModule.forRoot(),
         SharedModule,
-        BsDatepickerModule.forRoot(),
         NgxUiLoaderModule,
         NgxUiLoaderModule.forRoot({}),
-        NgxUiLoaderRouterModule.forRoot({
-            showForeground: true,
-        }),
         FontAwesomeModule,
 
 

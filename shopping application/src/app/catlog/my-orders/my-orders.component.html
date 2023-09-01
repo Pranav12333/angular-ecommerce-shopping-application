@@ -1,0 +1,42 @@
+<div class="my-orders" style="width: 68rem;">
+    <table class="table mt-4">
+  
+      <thead>
+        <tr>
+          <th>Order Number</th>
+          <th>Product Title</th>
+          <th>Product Image</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+  
+      <tbody *ngFor="let order of orders; let i = index;">
+        <tr>
+          <td height="100" width="100"><b>{{ order.orderNumber }}</b></td>
+          <td height="100" width="230">{{ order.productTitle }}</td>
+          <td height="100" width="280">
+            <img [src]="order.productImage" alt="Product Image" height="100" width="85" [attr.src]="order.productImage" class="image" />
+          </td>
+          <td class="col-2">
+            <div class="input-group">
+              <input [id]="'quantityInput-' + i" type="number" class="form-control text-center" [(ngModel)]="order.quantity" disabled />
+            </div>
+          </td>
+          <td height="100" width="150">{{ order.totalPrice | rupeeFormat }}</td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="trackOrder(order.orderNumber)">
+              <i class="fas fa-truck"></i> Track Order
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="total-price">Total Orders: {{ orders.length }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  

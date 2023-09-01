@@ -20,7 +20,6 @@
       <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/layout/home">
           <i class="fa fa-home" aria-hidden="true"></i>Home</a>
       </li>
-
       <li class="nav-item dropdown m-3" *ngIf="addProduct && username">
         <select class="form-select" (change)="navigateTo($event)">
           <option *ngFor="let optionAdd of addProductDropdown" [value]="optionAdd.value">{{ optionAdd.label }}</option>
@@ -38,13 +37,15 @@
       <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/about-us">
           <i class="fa fa-info-circle m-1" aria-hidden="true"></i>About</a></li>
 
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/my-order">
+          <i class="fas fa-shopping-bag m-1" aria-hidden="true"></i>My Orders</a></li>
+
       <div class="cart-container my-auto" *ngIf="username != 'Admin' && username != null">
         <i class="bi bi-cart3" routerLink="/catlog/add-to-cart">
           <i class="fas fa-shopping-cart fa-2x"></i>
         </i>
         <p class="badge badge-warning ml-4">{{ totalQuantity }}</p>
       </div>
-
 
       <li class="fs-6 mx-3 m-2" *ngIf="!username">
         <button class="btn btn-outline-primary m-2" routerLink="/user-auth/login">

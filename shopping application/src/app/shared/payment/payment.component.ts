@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router  } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -11,13 +11,9 @@ export class PaymentComponent {
   formSubmitted = false;
 
   canDeactivate(): boolean {
-    if (this.formSubmitted) {
-      return true;
-    } else {
-      return window.confirm('Are you sure you want to leave this page without submitting the form?');
-    }
+    if (this.formSubmitted) { return true }
+    else { return window.confirm('Are you sure you want to leave this page without submitting the form?') }
   }
-
   submitPayment() {
     this.formSubmitted = true;
   }
