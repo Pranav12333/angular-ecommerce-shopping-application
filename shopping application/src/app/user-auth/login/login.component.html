@@ -9,10 +9,11 @@
           <label for="username" class="form-label">
             <i class="fas fa-user"></i> Username:
           </label>
-          <input type="email" id="username" formControlName="username" class="form-control form-field-shadow" placeholder="Enter your username">
+          <input type="email" id="username" formControlName="username" class="form-control form-field-shadow"
+            placeholder="Enter your username">
           <span *ngIf="getFormControl('username')?.invalid && getFormControl('username')?.touched" class="text-danger">
             <ng-container *ngIf="getFormControl('username')?.errors?.['required']">
-              <i class="fas fa-exclamation-circle"></i> Username is required.
+              <i class="fas fa-exclamation-circle mx-1"></i> Username is required.
             </ng-container>
           </span>
         </div>
@@ -21,21 +22,24 @@
             <i class="fas fa-lock"></i> Password:
           </label>
           <div class="password-input">
-            <input type="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" class="form-control form-field-shadow" placeholder="Enter your password">
+            <input type="password" formControlName="password" [type]="showPassword ? 'text' : 'password'"
+              class="form-control form-field-shadow" placeholder="Enter your password">
             <span class="toggle-password-btn" (click)="toggleShowPassword()">
               <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
             </span>
           </div>
-          <span *ngIf="getFormControl('password')?.invalid && getFormControl('password')?.touched" class="text-danger  mb-5">
+          <span *ngIf="getFormControl('password')?.invalid && getFormControl('password')?.touched"
+            class="text-danger  mb-5">
             <ng-container *ngIf="getFormControl('password')?.errors?.['required']">
-              <i class="fas fa-exclamation-circle"></i> Password is required.
+              <i class="fas fa-exclamation-circle mx-1"></i> Password is required.
             </ng-container>
             <ng-container *ngIf="getFormControl('password')?.errors?.['minlength']">
-              <i class="fas fa-exclamation-circle"></i> Password should have at least 6 characters.
+              <i class="fas fa-exclamation-circle mx-1"></i> Password should have at least 6 characters.
               <br>
             </ng-container>
-            <ng-container class="text-danger" *ngIf="getFormControl('password')?.errors?.['pattern'] && !getFormControl('password')?.errors?.['minlength']">
-              <i class="fas fa-exclamation-circle"></i> Password should contain a special character.
+            <ng-container class="text-danger"
+              *ngIf="getFormControl('password')?.errors?.['pattern'] && !getFormControl('password')?.errors?.['minlength']">
+              <i class="fas fa-exclamation-circle mx-1"></i> Password should contain a special character.
             </ng-container>
           </span>
         </div>

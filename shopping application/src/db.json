@@ -36,6 +36,13 @@
       "password": "shubh@123",
       "confirmPassword": "shubh@123",
       "id": 6
+    },
+    {
+      "username": "pranavparmar",
+      "email": "pranav@gmail.com",
+      "password": "test@123",
+      "confirmPassword": "test@123",
+      "id": 7
     }
   ],
   "allProduct": [
