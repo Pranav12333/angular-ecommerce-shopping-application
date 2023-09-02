@@ -76,10 +76,6 @@ export class ProductDetailsComponent {
       });
     }
   }
-
-  buying(){
-    this.router.navigate(['payment'])
-  }
   
   getProductsToProceed() {
     this.productService.compareData().subscribe(products => {
@@ -88,6 +84,10 @@ export class ProductDetailsComponent {
 
   review() {
     this.router.navigate(['/user-review', this.productId]);
+  }
+
+  Payment(){
+    this.router.navigate(['/payment',this.productId])
   }
 
 

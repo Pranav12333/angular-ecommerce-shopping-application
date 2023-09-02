@@ -41,7 +41,7 @@
           <i class="fas fa-shopping-bag m-1" aria-hidden="true"></i>My Orders</a></li>
 
       <div class="cart-container my-auto" *ngIf="username != 'Admin' && username != null">
-        <i class="bi bi-cart3" routerLink="/catlog/add-to-cart">
+        <i class="bi bi-cart3 text-white" style="opacity: 0.90;" routerLink="/catlog/add-to-cart">
           <i class="fas fa-shopping-cart fa-2x"></i>
         </i>
         <p class="badge badge-warning ml-4">{{ totalQuantity }}</p>

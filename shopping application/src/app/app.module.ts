@@ -36,8 +36,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         NgxUiLoaderModule,
         NgxUiLoaderModule.forRoot({}),
         FontAwesomeModule,
-
-
     ]
 })
 export class AppModule { }

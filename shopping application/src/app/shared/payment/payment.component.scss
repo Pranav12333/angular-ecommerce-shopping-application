@@ -1,17 +1,15 @@
-.container{
-    max-width: 400px;
+.container {
+    max-width: 76%; // Adjust the width as needed
     margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 11px;
     box-shadow: 0px 0px 10px rgba(96, 94, 221, 0.418);
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+}
 
-    label {
-        font-weight: bold;
-    }
+label {
+    font-weight: 500;
+    color: rgb(7, 7, 74);
 }
 
 .heading {
@@ -19,7 +17,7 @@
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    color:#a407a4cf;
+    color: #a407a4cf;
     border-radius: 8px;
     border-width: 0 1px 2px 1px;
     border-style: none solid solid solid;
@@ -28,4 +26,8 @@
         0px 0px 0px #245aef64,
         0px 2px 10px #1d09f782,
         0px 2px 10px #24ef5364;
+}
+
+.row {
+    margin-bottom: 20px;
 }
