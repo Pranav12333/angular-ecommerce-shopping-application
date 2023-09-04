@@ -73,3 +73,21 @@
 }
 
 
+
+/* Add this to your CSS */
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 1rem;
+  left: 1rem;
+  transition: transform 0.2s ease, font-size 0.2s ease, top 0.2s ease;
+  font-size: 1rem; /* Adjust as needed */
+  color: #30349e;
+}
+
+.form-control:focus + .floating-label,
+.form-control:not(:placeholder-shown) + .floating-label {
+  top: 0.25rem;
+  transform: translateY(-50%);
+  font-size: 0.75rem; /* Adjust as needed */
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toArray } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
+import { ToasterService } from 'src/app/services/toaster.service';
 
 @Component({
   selector: 'app-product-details',
@@ -15,7 +16,7 @@ export class ProductDetailsComponent {
   reviewData: any;
   showFullDescription: boolean = false;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router, private toasterService: ToasterService) { }
 
   ngOnInit() {
     this.getProductDetailsById();
@@ -30,7 +31,7 @@ export class ProductDetailsComponent {
     this.showFullDescription = !this.showFullDescription;
   }
 
-  
+
   private updateTotalQuantity() {
     this.productService.compareData().subscribe((items) => {
       this.productService.updateTotalQuantity(items.length);
@@ -57,15 +58,17 @@ export class ProductDetailsComponent {
     });
   }
 
-  adding() {
+  addingToCart() {
     if (this.productData && this.productData.length > 0) {
       const productToUpdate = this.productData[0];
 
       // Check if the product's cart property is already set to 1
       if (productToUpdate.cart === 1) {
         alert("Product is already exist in the cart.");
+      } else {
+        productToUpdate.cart = 1;
+        this.toasterService.productAddToaster();
       }
-      productToUpdate.cart = 1;
       this.productService.updateData(this.productId, productToUpdate).subscribe((res) => {
       }, (error) => {
         console.log(error);
@@ -76,7 +79,7 @@ export class ProductDetailsComponent {
       });
     }
   }
-  
+
   getProductsToProceed() {
     this.productService.compareData().subscribe(products => {
     });
@@ -86,8 +89,8 @@ export class ProductDetailsComponent {
     this.router.navigate(['/user-review', this.productId]);
   }
 
-  Payment(){
-    this.router.navigate(['/payment',this.productId])
+  Payment() {
+    this.router.navigate(['/payment', this.productId])
   }
 
 

@@ -37,5 +37,14 @@ export class ToasterService {
     });
   }
 
+  productAddToaster(){
+    this.toastrService.info('Product added to cart','',{
+      timeOut: 1000, 
+      positionClass: 'toast-top-center',
+      progressBar: true, 
+      closeButton: true, 
+      tapToDismiss: false, 
+    })
+  }
 
 }

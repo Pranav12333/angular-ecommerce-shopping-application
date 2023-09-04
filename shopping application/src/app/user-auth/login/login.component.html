@@ -1,5 +1,5 @@
 <div class="justify-content-center d-flex align-items-center my-5">
-  <div class="mainForm w-75  p-5">
+  <div class="mainForm w-75 p-5">
     <h2 class="text-center">
       <i class="fas fa-sign-in-alt"></i> Login
     </h2>
@@ -29,7 +29,7 @@
             </span>
           </div>
           <span *ngIf="getFormControl('password')?.invalid && getFormControl('password')?.touched"
-            class="text-danger  mb-5">
+            class="text-danger mb-5">
             <ng-container *ngIf="getFormControl('password')?.errors?.['required']">
               <i class="fas fa-exclamation-circle mx-1"></i> Password is required.
             </ng-container>

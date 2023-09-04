@@ -36,7 +36,7 @@
           </div>
         </td>
         <td height="100" width="150">{{ item.price | rupeeFormat }}</td>
-        <td><button class="btn btn-outline-danger" > <i class="fas fa-trash mr-1" (click)="deleteProducts(item.id)"></i> Delete</button></td>
+        <td><button class="btn btn-danger" (click)="deleteProducts(item.id)">Delete</button></td>
       </tr>
     </tbody>
     <tfoot>
@@ -46,4 +46,5 @@
       </tr>
     </tfoot>
   </table>
+
 </div>

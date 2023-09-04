@@ -13,7 +13,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/layout/home">
-          <i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          <i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
       </li>
       <li class="nav-item dropdown m-3" *ngIf="addProduct && username">
         <select class="form-select" (change)="navigateTo($event)">
@@ -53,7 +53,7 @@
         <button class="btn btn-outline-primary m-2"><i class="fa fa-user" aria-hidden="true"></i> {{ username }}
         </button>
         <button class="btn btn-outline-primary m-2" type="submit" (click)="logout()" routerLink="/user-auth/login">
-          <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button>
+          <i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Logout</button>
       </li>
     </ul>
   </div>

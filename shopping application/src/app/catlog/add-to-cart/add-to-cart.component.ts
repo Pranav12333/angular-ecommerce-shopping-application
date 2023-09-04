@@ -56,7 +56,7 @@ export class AddToCartComponent implements OnInit {
 
   deleteProducts(id: any) {
     const updatedData = { cart: 0 };
-    this.productService.patchData(id, updatedData).subscribe(() => {
+    this.productService.patchData(id, updatedData).subscribe((res) => {
       this.fatchData();
       this.productService.compareData().subscribe((items) => {
         this.productService.updateTotalQuantity(items.length);
