@@ -13,6 +13,8 @@ export class UserReviewComponent implements OnInit {
   reviewForm: FormGroup;
   productId: any;
   selectedRating = 0;
+  stars: number[] = [1, 2, 3, 4, 5];
+
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {
     this.reviewForm = new FormGroup({
@@ -39,9 +41,6 @@ export class UserReviewComponent implements OnInit {
 
   setRating(rating: number) {
     this.selectedRating = rating;
-    // this.reviewForm.get('ratingValue')?.setValue(rating); // Update the value in the form
-    console.log(this.reviewForm.value);
-
   }
 
   submitReview(data: any) { 

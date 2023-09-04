@@ -46,12 +46,16 @@
   </div>
 </div>
 
-<label for="priceRange" class="form-label">Select price range:</label>
-<input type="range" class="form-range" min="1000" max="5000" step="100" (input)="onPriceRangeChange($event)">
-<div class="d-flex justify-content-between">
-  <span> Min Price: {{selectedPrice.min | rupeeFormat}} </span>
-  <span> Selected Price: {{selectedPrice.max | rupeeFormat}} </span>
-  <span> Max Price: {{5000 | rupeeFormat}} </span>
+<!-- Add a container div to center the price range -->
+<div class="text-center m-2">
+  <label for="priceRange" class="form-label">Select price:</label>
+  <input type="range" class="form-range col-lg-4 col-md-8 col-sm-12" min="1000" max="5000" step="100"
+    (input)="onPriceRangeChange($event)">
+  <div class="form-range col-lg-4 col-md-8 col-sm-12 mx-auto">
+    <span class="form-label">Min {{selectedPrice.min | rupeeFormat}}</span>
+    <span class="form-label">Max {{5000 | rupeeFormat}}</span>
+    <span class="form-label">Selected {{selectedPrice.max | rupeeFormat}}</span>
+  </div>
 </div>
 
 <div class="container">

@@ -92,7 +92,5 @@ export class ProductDetailsComponent {
   Payment() {
     this.router.navigate(['/payment', this.productId])
   }
-
-
 }
 
