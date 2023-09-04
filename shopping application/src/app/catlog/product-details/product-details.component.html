@@ -4,7 +4,6 @@
       <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
     </div>
     <div class="content col-lg-7 col-md-6 col-sm-12 m-4">
-
       <!-- Sticky product information container -->
       <p class="card-title pt-3"> <i class="fas fa-folder-open m-1"></i> <b> Category of product :-</b>
         {{item.category}}</p>
@@ -35,21 +34,19 @@
 </div>
 
 <div class="show-review p-4 w-75 mx-auto">
-  <h2 class="p-1 mb-1"><i class="fas fa-star m-2"></i> Product Reviews</h2>
-
+  <h2 class="p-1 mb-1"><i class="fas fa-comment m-1"></i> Product Reviews</h2>
   <!-- Display existing reviews (if any) -->
   <div class="existing-reviews">
     <div *ngFor="let review of reviewData; let i = index" class="review-item mb-3 p-3">
       <b>Review {{ i + 1 }} of {{ reviewData.length }}</b>
+      <span class="user-info float-right">{{ review.userName }}
+      </span>
       <hr>
-      <div class="user-info mt-3"> <i class="fas fa-user m-1"></i> Name :
-        <span class="user-name">{{ review.userName }}</span>
-      </div>
-      <!-- description -->
-      <p class="review-text"> <i class="fas fa-comment m-1"></i><b>Review : </b> {{ review.reviewText }}</p>
-      <!-- date -->
-      <p class="text-muted ml-3"> Posted on <i class="far fa-calendar m-1"></i> {{ review.date | date: 'dd/MM/yyyy' }}
-        at <i class="far fa-clock m-2"></i> {{ review.date | date: 'h:mm a' }}</p>
+      <p class="review-text"> <b>Review : </b> {{ review.reviewText }}</p>
+      <p class="text-muted ml-3">
+        Posted on <i class="far fa-calendar"></i> {{ review.date | date: 'dd/MM/yyyy' }} at <i class="far fa-clock"></i>
+        {{ review.date | date: 'h:mm a' }}
+      </p>
     </div>
   </div>
 </div>
