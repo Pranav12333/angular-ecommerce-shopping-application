@@ -18,6 +18,7 @@ export class ProductDetailsComponent {
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router, private toasterService: ToasterService) { }
 
+  
   ngOnInit() {
     this.getProductDetailsById();
     this.getProductsToProceed();
