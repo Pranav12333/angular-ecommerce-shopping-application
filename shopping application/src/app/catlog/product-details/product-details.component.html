@@ -17,8 +17,8 @@
       <!-- Product description -->
       <p class="card-text" [ngClass]="{'collapsed-description': !showFullDescription}">
         <b class="card-text mt-3"> ❖ Product description : </b><br>
-        {{ showFullDescription ? item.description : (item.description | slice:0:550) }}
-        <span *ngIf="item.description.length > 550">
+        {{ showFullDescription ? item.description : (item.description | slice:0:450) }}
+        <span *ngIf="item.description.length > 450">
           {{ showFullDescription ? '... . |' : '... . |' }}
           <a (click)="toggleDescription()" class="read-more-link">
             <i [ngClass]="{'fa-chevron-circle-down': !showFullDescription, 'fa-chevron-circle-up': showFullDescription}"

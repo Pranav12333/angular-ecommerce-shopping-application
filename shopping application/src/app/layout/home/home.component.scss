@@ -24,7 +24,6 @@ $carousel-caption-hover-shadow: rgba(0, 0, 0, 0.924);
   }
 }
 
-// General styles
 img {
   height: 26rem;
 }
@@ -80,6 +79,7 @@ img {
   text-align: center;
 }
 
+/* Default styles */
 .carousel-caption h3 {
   cursor: pointer;
   width: 13rem;
@@ -90,17 +90,13 @@ img {
   font-size: 1rem;
   box-shadow: 0 0px 6px $carousel-caption-shadow;
   transition: box-shadow 0.3s ease;
-
-  @include hover-active {
-    box-shadow: 0 0px 12px $carousel-caption-hover-shadow;
-    background-color: $carousel-caption-hover-bg;
-  }
 }
 
+/* Media query for smaller screens */
 @media (max-width: 1100px) {
   .carousel-caption h3 {
     width: 9rem;
-    padding: 0.5rem;
+    padding: 0.40rem 0.5rem;
     border-radius: 0.6rem;
     font-size: 0.75rem;
     box-shadow: 0 0px 4px $carousel-caption-shadow;
@@ -111,12 +107,13 @@ img {
   }
 }
 
+/* Media query for even smaller screens */
 @media (max-width: 667px) {
   .carousel-caption h3 {
     width: 6rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.25rem 0.3rem;
     border-radius: 0.4rem;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     box-shadow: 0 0px 4px $carousel-caption-shadow;
 
     @include hover-active {
@@ -125,20 +122,33 @@ img {
   }
 }
 
-/* Center the price range container horizontally and vertically */
 .price-range {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  font-family: cursive;
+  font-size: 18px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1100px) {
+  .price-range {
+    font-size: 15px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 667px) {
+  .price-range {
+    font-size: 12px;
+  }
 }
 
 // Custom carousel control arrows
 .carousel-control-prev,
 .carousel-control-next {
-  width: 50px;
-  height: 50px;
+  width: 4%;
+  height: 11%;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   position: absolute;
@@ -159,6 +169,7 @@ img {
 .form-label {
   font-size: 18px;
   color: #33326d;
+  font-family: sans-serif;
 }
 
 .form-select {
@@ -173,6 +184,21 @@ img {
     color: #001172;
     background-color: #e1d8d897;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.549);
+  }
+}
+
+.form-range {
+  box-shadow: 0 0 10px rgba(138, 131, 131, 0.859);
+  border-radius: 5px;
+  padding: 0px 10px;
+  background-color: rgba(168, 152, 152, 0.253);
+
+  @media (max-width: 775px) {
+    width: 17rem;
+  }
+
+  @media (max-width: 375px) {
+    width: 15rem;
   }
 }
 

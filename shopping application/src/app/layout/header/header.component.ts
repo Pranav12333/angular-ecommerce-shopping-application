@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   showProductDropdown: any[] = [];
   addProductDropdown: any[] = [];
   totalQuantity: any;
+  allProduct:any 
 
   constructor(
     private router: Router, private userService: UserService,
@@ -47,6 +48,11 @@ export class HeaderComponent implements OnInit {
     });
     this.updateTotalQuantity();
     this.username = localStorage.getItem('username');
+  }
+  goToHome(){
+    this.productService.getAllProduct().subscribe((res) => {
+      this.allProduct = res;
+    })
   }
 
   filterProductsByTitle(event: Event) {

@@ -5,6 +5,7 @@ import { AllProductComponent } from '../catlog/all-product/all-product.component
 import { PaymentComponent } from './payment/payment.component';
 import { CanDeactivateGuard } from '../guard/can-deactivate.guard';
 import { authGuardGuard } from '../guard/auth-guard.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
     component: PaymentComponent,
     // canActivate : [authGuardGuard],
     canDeactivate : [CanDeactivateGuard]
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent
   }
 ];
 

@@ -25,11 +25,11 @@
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev m-2" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next m-2" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -37,31 +37,30 @@
   <div class="d-flex ">
     <div class="new-arrival-image">
     </div>
-    <div class="new-arrival-content">
+    <!-- <div class="new-arrival-content">
       <h1>New arrival</h1>
       Discover the latest New Arrival collection on our E-commerce Clothes Website! Elevate your fashion game with
       stunning Patola Sarees, elegant Dresses, dashing Suits, and trendy Casual Wear. Embrace sophistication with
       stylish Blazers, Pants, and Shirts.
-    </div>
+    </div> -->
   </div>
 </div>
 
 <!-- Add a container div to center the price range -->
-<div class="text-center m-2">
-  <label for="priceRange" class="form-label">Select price:</label>
+<div class="text-center">
+  <label for="priceRange" class="form-label mx-4">Select price:</label>
   <input type="range" class="form-range col-lg-4 col-md-8 col-sm-12" min="1000" max="5000" step="100"
     (input)="onPriceRangeChange($event)">
-  <div class="form-range col-lg-4 col-md-8 col-sm-12 mx-auto">
-    <span class="form-label">Min {{selectedPrice.min | rupeeFormat}}</span>
-    <span class="form-label">Max {{5000 | rupeeFormat}}</span>
-    <span class="form-label">Selected {{selectedPrice.max | rupeeFormat}}</span>
+  <div class="price-range col-lg-6 col-md-9 col-sm-10 mx-auto pl-6 mx-4">
+    <span class="mx-4">Min <i class="fa-solid fa-rupee-sign"></i> : {{selectedPrice.min | rupeeFormat}}</span>
+    <span class="mx-4">Selected <i class="fa-solid fa-rupee-sign"></i> : {{selectedPrice.max | rupeeFormat}}</span>
+    <span class="mx-4">Max <i class="fa-solid fa-rupee-sign"></i> : {{5000 | rupeeFormat}}</span>
   </div>
 </div>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <!-- Use the appropriate array based on the flag -->
-    <div class="col-lg-2 col-md-4 col-sm-6 my-3"
+  <div class="row justify-content-center mx-5">
+    <div class="col-lg-3 col-md-6 col-sm-6 my-3"
       *ngFor="let item of (showFilteredProducts ? filteredProducts : allProduct)">
       <div class="card">
         <img class="card-img-top" routerLink="/catlog/product-details/{{item.id}}" [src]="item.image"
@@ -71,9 +70,9 @@
           <p>{{ item.title }}</p>
           <b class="card-text">Price:{{ item.price | rupeeFormat }}</b>
           <div class="d-flex justify-content-between mt-2">
-            <button class="btn btn-outline-secondary btn-sm" routerLink="/catlog/product-details/{{item.id}}">Buy
+            <button class="btn btn-sm btn-outline-secondary" routerLink="/catlog/product-details/{{item.id}}">Buy
               Now</button>
-            <button class="btn btn-outline-secondary btn-sm" routerLink="/catlog/product-details/{{item.id}}">See
+            <button class="btn btn-sm btn-outline-secondary" routerLink="/catlog/product-details/{{item.id}}">See
               detail</button>
           </div>
         </div>

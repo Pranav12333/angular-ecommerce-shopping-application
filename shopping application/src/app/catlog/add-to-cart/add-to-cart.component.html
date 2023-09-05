@@ -1,5 +1,5 @@
-<div class="addToCart" style="width: 68rem;">
-  <table class="table mt-4">
+<div class="table-responsive addToCart m-auto mt-4">
+  <table class="table">
 
     <thead>
       <tr>
@@ -15,7 +15,7 @@
     <tbody *ngFor="let item of addedProducts; let i = index;">
       <tr>
         <td height="100" width="100"><b>{{i+1}}</b></td>
-        <td height="100" width="230">{{item.title}}</td>
+        <td class="title" height="100" width="230">{{item.title}}</td>
         <td height="100" width="280"><img [src]="item.image" alt="Product Image" height="100" width="85"
             [attr.src]="item.image" class="image" />
         </td>
@@ -46,5 +46,4 @@
       </tr>
     </tfoot>
   </table>
-
 </div>
