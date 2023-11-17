@@ -1,0 +1,52 @@
+<div class="col-lg-10 col-md-8 col-sm-12 m-2 product-container mx-auto" *ngFor="let item of productData">
+  <div class="row align-items">
+    <div class="image-container col-lg-3 col-md-6 col-sm-12 m-5">
+      <a><img class="card-img-top shadow-lg img-fluid rounded" [src]="item.image" alt="Card image cap"></a>
+    </div>
+    <div class="content col-lg-7 col-md-6 col-sm-12 m-4">
+      <!-- Sticky product information container -->
+      <p class="card-title pt-3"> <i class="fas fa-folder-open m-1"></i> <b> Category of product :-</b>
+        {{item.category}}</p>
+      <p class="card-title "><i class="fas fa-tag m-2"></i> <b>Product's title :- </b> {{item.title}}</p>
+      <p><b class="card-text price">Price:- {{ item.price | rupeeFormat }}</b></p>
+      <button class="btn btn-outline-primary m-2" (click)="addingToCart()"><i class="fas fa-cart-plus"></i> Add to
+        cart</button>
+      <button class="btn btn-success m-2" (click)="Payment()"><i class="fas fa-shopping-cart"></i> Buy now</button>
+      <hr>
+
+      <!-- Product description -->
+      <p class="card-text" [ngClass]="{'collapsed-description': !showFullDescription}">
+        <b class="card-text mt-3"> ❖ Product description : </b><br>
+        {{ showFullDescription ? item.description : (item.description | slice:0:550) }}
+        <span *ngIf="item.description.length > 550">
+          {{ showFullDescription ? '... . |' : '... . |' }}
+          <a (click)="toggleDescription()" class="read-more-link">
+            <i [ngClass]="{'fa-chevron-circle-down': !showFullDescription, 'fa-chevron-circle-up': showFullDescription}"
+              class="fas"></i> {{ showFullDescription ? 'Read Less' : 'Read More' }}
+          </a>
+        </span>
+      </p>
+      <!-- Review button -->
+      <button class="btn btn-outline-secondary mb-3" (click)="review()"><i class="fas fa-pencil-alt"></i> Review the
+        product</button>
+    </div>
+  </div>
+</div>
+
+<div class="show-review p-4 w-75 mx-auto">
+  <h2 class="p-1 mb-1"><i class="fas fa-comment m-1"></i> Product Reviews</h2>
+  <!-- Display existing reviews (if any) -->
+  <div class="existing-reviews">
+    <div *ngFor="let review of reviewData; let i = index" class="review-item mb-3 p-3">
+      <b>Review {{ i + 1 }} of {{ reviewData.length }}</b>
+      <span class="user-info float-right">{{ review.userName }}
+      </span>
+      <hr>
+      <p class="review-text"> <b>Review : </b> {{ review.reviewText }}</p>
+      <p class="text-muted ml-3">
+        Posted on <i class="far fa-calendar"></i> {{ review.date | date: 'dd/MM/yyyy' }} at <i class="far fa-clock"></i>
+        {{ review.date | date: 'h:mm a' }}
+      </p>
+    </div>
+  </div>
+</div>

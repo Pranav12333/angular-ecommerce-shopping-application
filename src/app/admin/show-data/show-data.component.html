@@ -1,0 +1,22 @@
+<div class="container allCard">
+  <div class="row justify-content-center mt-5 scroll-container">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let item of allData">
+      <div class="card">
+        <img class="card-img-top" height="16rem" [src]="item.image" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.category }}</h5>
+          <h5 class="card-title">{{ item.title }}</h5>
+          <b class="card-text price"> Price: {{ item.price | rupeeFormat}}</b>
+          <div class="text-center">
+            <button class="btn btn-danger m-1" (click)="deleteData(item.id)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+            <button class="btn btn-primary m-1" routerLink="/admin/update/{{ item.id }}">
+              <i class="fas fa-edit"></i> Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
