@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ECommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
@@ -26,7 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# angular-ecommerce-shopping-application
-this is my angular project on ecommerce website of the clothes using html, css, ts and i have used angular framework for making this project.
->>>>>>> 38be510a5ec7f4e3613dada3ae89c740757b05e5

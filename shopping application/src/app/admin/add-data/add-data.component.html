@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="border p-5 m-3">
+    <div class="d-flex justify-content-center mb-4">
+      <h1 class="heading px-3 py-2">Add data</h1>
+    </div>
+    <form [formGroup]="dataForm">
+
+      <!-- dynamic dropdown -->
+      <div class="nav-item dropdown">
+        <select class="form-select" *ngIf="maleDropdown">
+          <option *ngFor="let optionWear of mansWearDropdown" [value]="optionWear.value">{{ optionWear.label }}</option>
+        </select>
+      </div>
+
+
+      <!-- dynamic dropdown -->
+      <div class="nav-item dropdown">
+        <select class="form-select" *ngIf="femaleDropdown">
+          <option *ngFor="let optionWear of womensWearDropdown" [value]="optionWear.value">{{ optionWear.label }}
+          </option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+        <div *ngIf="dataForm.get('title')?.errors && dataForm.get('title')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFile">Image File</label>
+        <input type="file" id="imageFile" class="form-control" (change)="handleFileInput($event)">
+        <div *ngIf="selectedFile === null && dataForm.get('image')?.touched" class="text-danger">
+          Image is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" class="form-control" formControlName="price">
+        <div *ngIf="dataForm.get('price')?.errors && dataForm.get('price')?.touched" class="text-danger">
+          price is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+        <div *ngIf="dataForm.get('description')?.errors && dataForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary m-4 px-3" input type="submit" (click)="addData(dataForm.value)"
+          routerLink="/admin/show" [disabled]="!dataForm.valid"> <i class="fas fa-plus mr-2"></i>Add product</button>
+        <button class="btn btn-primary" input type="submit" routerLink="/admin/show"> <i class="fas fa-list mr-2"></i> Show products</button>
+      </div>
+    </form>
+  </div>
+</div>

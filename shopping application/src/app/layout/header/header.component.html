@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+  <a class="navbar-brand mx-2">Logo</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="search mx-lg-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search item" aria-label="Search"
+        (click)="hideSlider()" (input)="filterProductsByTitle($event)">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/layout" (click)="goToHome()">
+          <i class="fa fa-home mr-1" aria-hidden="true"></i>Home</a>
+      </li>
+      <li class="nav-item dropdown m-3" *ngIf="addProduct && username">
+        <select class="form-select" (change)="navigateTo($event)">
+          <option *ngFor="let optionAdd of addProductDropdown" [value]="optionAdd.value">{{ optionAdd.label }}</option>
+        </select>
+      </li>
+      <li class="nav-item dropdown m-3" *ngIf="showProduct && username">
+        <select class="form-select" (change)="navigateTo($event)">
+          <option *ngFor="let optionShow of showProductDropdown" [value]="optionShow.value">{{ optionShow.label }}
+          </option>
+        </select>
+      </li>
+
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/contact-us">
+          <i class="fa fa-address-book m-1" aria-hidden="true"></i>Contact</a></li>
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/about-us">
+          <i class="fa fa-info-circle m-1" aria-hidden="true"></i>About</a></li>
+
+      <li class="nav-item fs-6 m-3"><a class="nav-link" routerLink="/catlog/my-order">
+          <i class="fas fa-shopping-bag m-1" aria-hidden="true"></i>Orders</a></li>
+
+      <div class="cart-container my-auto" *ngIf="username != 'Admin' && username != null && totalQuantity > 0">
+        <i class="bi bi-cart3 " style="opacity: 0.90;" routerLink="/catlog/add-to-cart">
+          <i class="fas fa-shopping-cart fa-2x"></i>
+        </i>
+        <p class="badge badge-warning ml-4">{{ totalQuantity }}</p>
+      </div>
+
+      <li class="fs-6 mx-3 m-2" * ngIf="!username">
+        <button class="btn btn-outline-primary m-2" routerLink="/user-auth/login">
+          <i class="fas fa-sign-in-alt m-1"></i>Login</button>
+        <button class="btn btn-outline-primary m-2" type="submit" routerLink="/user-auth/register">
+          <i class="fas fa-user-plus m-1"></i> Register</button>
+      </li>
+
+      <li class="fs-6 mx-3 m-2" *ngIf="username">
+        <button class="btn btn-outline-primary m-2"><i class="fa fa-user" aria-hidden="true"></i> {{ username }}
+        </button>
+        <button class="btn btn-outline-primary m-2" type="submit" (click)="logout()" routerLink="/user-auth/login">
+          <i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
