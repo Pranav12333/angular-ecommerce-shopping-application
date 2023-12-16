@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
-import { HomeComponent } from './layout/home/home.component';
 
 const routes: Routes = [
-  
-  {
-    path: 'user-auth',
-    loadChildren: () => import('./user-auth/user-auth.module').then(u => u.UserAuthModule)
-  },
-
   {
     path: 'layout',
     loadChildren: () => import('./layout/layout.module').then(l => l.LayoutModule),
+  },
+  {
+    path: 'user-auth',
+    loadChildren: () => import('./user-auth/user-auth.module').then(u => u.UserAuthModule)
   },
   {
     path: 'catlog',

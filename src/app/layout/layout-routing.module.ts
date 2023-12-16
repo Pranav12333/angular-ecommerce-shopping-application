@@ -10,27 +10,27 @@ const routes: Routes = [
   {
     path:'',
     component:HomeComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'home',
     component: HomeComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'catlog/all-product',
     component: AllProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'catlog/male-product',
     component: MaleProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'catlog/female-product',
     component: FemaleProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   }
 
 ];

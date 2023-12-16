@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(45deg, #453766dc, #31496bdc, #6d2475dc) !important;
+  background: linear-gradient(45deg, #9787bddc, #8eb3e6dc, #da93e2dc) !important;
 }
 
 .search {
@@ -10,21 +10,23 @@
 
   >input {
     width: 12rem;
-    background-color: rgba(255, 255, 255, 0.153);
-    border: 2px solid rgba(51, 66, 110, 0.84);
-    box-shadow: 0px 0px 15px rgb(24, 35, 67);
+    background-color: rgb(255 255 255 / 47%);
+    border: 2px solid rgb(113 137 212 / 84%);
+    box-shadow: 0px 0px 15px rgb(113, 138, 212);
     border-radius: 5px;
     padding: 5px;
 
     &::placeholder {
       padding: 10px;
-      color: rgb(255, 255, 255);
+      color: rgb(12, 8, 8);
       opacity: 0.8;
     }
 
     &:hover {
-      border-color: #5e2c7e96;
-      box-shadow: 0px 0px 15px rgb(17, 31, 73)
+      border-color: #8b3cc096;
+      /* Adjust the border color on hover */
+      box-shadow: 0px 0px 15px rgb(183 189 207)
+        /* Add a different box shadow on hover */
     }
 
   }

@@ -14,29 +14,29 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 const routes: Routes = [
   {
     path: 'all-product', component: AllProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'female-product', component: FemaleProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'male-product', component: MaleProductComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'product-details/:id', component: ProductDetailsComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   {
     path: 'add-to-cart', component: AddToCartComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   },
   {
     path: 'my-order', component : MyOrdersComponent,
-    // canActivate: [authGuardGuard]
+    canActivate: [authGuardGuard]
   }
 ];
 

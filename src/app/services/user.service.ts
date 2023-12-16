@@ -15,10 +15,6 @@ export class UserService {
   // names = new BehaviorSubject<any>('');
 
   constructor(private http: HttpClient) { }
-
-  getDataFromCloudinary(){
-    return this.http.get('https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json')
-  }
   setUsername(username: string) {
     this.usernameSubject.next(username);
   }

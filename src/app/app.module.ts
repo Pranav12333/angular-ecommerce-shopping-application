@@ -13,7 +13,9 @@ import { UserService } from './services/user.service';
 import { SharedModule } from "./shared/shared.module";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxUiLoaderModule , NgxUiLoaderRouterModule } from "ngx-ui-loader";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -29,12 +31,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         LayoutModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
-        FormsModule,    
+        FormsModule,
         ToastrModule.forRoot(),
         SharedModule,
         NgxUiLoaderModule,
         NgxUiLoaderModule.forRoot({}),
-        FontAwesomeModule
+        FontAwesomeModule,
+        MatInputModule,
     ]
 })
 export class AppModule { }

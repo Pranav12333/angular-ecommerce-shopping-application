@@ -10,23 +10,23 @@ const routes: Routes = [
   {
     path:'show',
     component:ShowDataComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
   {
     path:'add',
     component:AddDataComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
 
   {
     path:'product-details/:id',
     component:ProductDetailsComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
   {
     path:'update/:id',
     component:UpdateDataComponent,
-    // canActivate:[authGuardGuard]
+    canActivate:[authGuardGuard]
   },
 ];
 

@@ -43,83 +43,37 @@ export class ProductService {
       map(products => products.filter(product => product.cart === 1))
     );
   }
-  
-  // compareData(): Observable<any[]> {
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json").pipe(
-  //     map(products => products.filter(product => product.cart === 1))
-  //   );
-  // }
-
-  // updateTotalQuantity(quantity: number) {
-  //   this.totalQuantitySubject.next(quantity);
-  // }
   updateTotalQuantity(quantity: number) {
     this.totalQuantitySubject.next(quantity);
   }
-  
   getShowProductDropdown(): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:3000/showProductDropdown");
   }
-  // getShowProductDropdown(): Observable<any[]> {
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   getAddProductDropdown(): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:3000/addProductDropdown");
   }
-  // getAddProductDropdown(): Observable<any[]> {
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   getMansWearDropdown(): Observable<any[]>{
     return this.http.get<any[]>("http://localhost:3000/mansWearDropdown");
   }
-  // getMansWearDropdown(): Observable<any[]>{
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   getWomensWearDropdown(): Observable<any[]>{
     return this.http.get<any[]>("http://localhost:3000/womensWearDropdown");
   }
-  // getWomensWearDropdown(): Observable<any[]>{
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   getProductReview(){
     return this.http.get("http://localhost:3000/reviewsData");
   }
-  // getProductReview(){
-  //   return this.http.get("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   postProductReview(data:any){
     return this.http.post("http://localhost:3000/reviewsData",data);
   }
-  // postProductReview(data:any){
-  //   return this.http.post("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json",data);
-  // }
-
 
   getAllProduct(): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:3000/allProduct");
   }
-  
-  // getAllProduct(): Observable<any[]> {
-  //   return this.http.get<any[]>("https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json");
-  // }
-  
   getDataById(id: any, data: any) {
     return this.http.get(`http://localhost:3000/allProduct/${id}`, data);
   }
-
-  // getDataById(id: any, data: any) {
-  //   return this.http.get(`https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json${id}`, data);
-  // }
-  
   getReviewById(id: any, data:any){
-    return this.http.get(`https://res.cloudinary.com/dzmidzgr4/raw/upload/v1696786615/test.json/${id}`,data);
+    return this.http.get(`http://localhost:3000/reviewsData/${id}`,data);
   }
-
   postData(data: any) {
     return this.http.post("http://localhost:3000/allProduct", data);
   }

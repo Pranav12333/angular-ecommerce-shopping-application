@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import{ ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from "../shared/shared.module";
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SharedModule } from "../shared/shared.module";
         CommonModule,
         UserAuthRoutingModule,
         ReactiveFormsModule,
-        SharedModule
+        SharedModule,
+        MatInputModule
     ]
 })
 export class UserAuthModule { }

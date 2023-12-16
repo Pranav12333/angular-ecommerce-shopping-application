@@ -11,12 +11,12 @@ const routes: Routes = [
   {
     path: 'user-review/:id',
     component: UserReviewComponent,
-    // canActivate : [authGuardGuard]
+    canActivate : [authGuardGuard]
   },
   { 
     path: 'all-product' ,
     component: AllProductComponent,
-    // canActivate : [authGuardGuard]
+    canActivate : [authGuardGuard]
   },
   {
     path: 'payment/:id',

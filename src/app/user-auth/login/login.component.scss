@@ -1,10 +1,15 @@
 .mainForm {
-  max-width: 480px;
+  // max-width: 480px;
   border: 2px solid rgb(72, 7, 98);
   box-shadow: 0px 1px 6px 1px rgba(104, 11, 65, 0.449);
   border-radius: 22px;
   padding: 60px;
 }
+.mainForm:hover {
+  background-color: #ffffff; 
+  transition: background-color 0.3s ease;
+}
+
 @media screen and (max-width: 704px) {
   .mainForm {
     padding: 30px;

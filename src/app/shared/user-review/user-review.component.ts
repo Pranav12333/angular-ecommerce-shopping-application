@@ -40,6 +40,8 @@ export class UserReviewComponent implements OnInit {
   setRating(rating: number) {
     this.selectedRating = rating;
     // this.reviewForm.get('ratingValue')?.setValue(rating); // Update the value in the form
+    console.log(this.reviewForm.value);
+
   }
 
   submitReview(data: any) { 

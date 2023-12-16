@@ -15,7 +15,6 @@ export class HomeComponent {
   showCarousel = true;
   showFilteredProducts = false;
   selectedPrice: { min: number; max: number } = { min: 1000, max: 5000 };
-  test:any;
 
   constructor(private productService: ProductService, private sharedService: SharedService) {
     this.sharedService.showCarousel$.subscribe((show) => {
@@ -35,11 +34,7 @@ export class HomeComponent {
   getAllData(): Promise<any[]> {
     return new Promise<any[]>((resolve, reject) => {
       this.productService.getAllProduct().subscribe((res) => {
-        // console.log(res,'res');
-        this.test =res;
-        console.log(this.test.allProduct);
-        this.allProduct = this.test.allProduct;
-        
+        this.allProduct = res;
         this.showFilteredProducts = false;
         this.productService.allProduct$.subscribe((res) => {
           this.showFilteredProducts = res;
