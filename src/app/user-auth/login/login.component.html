@@ -1,6 +1,11 @@
-<div class="container">
-<div class="justify-content-center d-flex align-items-center my-5 row">
-  <div class="mainForm col-9 col-sm-8 col-md-8 col-lg-5">
+<div class="row justify-content-center align-items-center my-5">
+  <!-- Left Image Column -->
+  <div class="col-md-4 text-center">
+    <img src="../../../assets/log-in-left-img.png" alt="Left Image" class="img-fluid">
+  </div>
+
+  <!-- Login Container Column -->
+  <div class="mainForm col-md-4">
     <div class="form col-md-12">
       <h2 class="text-center"><i class="fas fa-sign-in-alt"></i> Login</h2>
       <form [formGroup]="loginUserForm" (ngSubmit)="loginUser(loginUserForm.value)" class="registration-form">
@@ -52,5 +57,12 @@
       </form>
     </div>
   </div>
-</div>
+
+  <!-- Right Image Column -->
+  <div class="col-md-4 text-center">
+    <img src="../../../assets/log-in-right-img.png" alt="Right Image" class="img-fluid">
+  </div>
+  <div class="foot-auth-page">
+
+  </div>
 </div>
