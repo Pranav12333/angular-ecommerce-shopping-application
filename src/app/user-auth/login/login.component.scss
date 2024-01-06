@@ -3,32 +3,22 @@
   border: 2px solid rgb(72, 7, 98);
   box-shadow: 0px 1px 6px 1px rgba(104, 11, 65, 0.449);
   border-radius: 22px;
-  padding: 60px;
+  padding: 40px;
 }
+
 .mainForm:hover {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 704px) {
-  .mainForm {
-    padding: 30px;
-  }
+.landing-page-img { 
+  border: 3px solid rgb(251, 37, 255);
+  box-shadow: 0px 0px 20px 10px #ff7e5f;
+  background: linear-gradient(to bottom right, #ffce70, #ff7e5f, #feb47b);
 }
-
-@media screen and (max-width: 374px) {
-  .mainForm {
-    padding: 10px;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
 
 .form-label {
-  font-weight: bold;
+  font-weight: bold;  
   color: #30349e;
 }
 
@@ -37,9 +27,6 @@
   color: #30349e;
 }
 
-.form-control {
-  width: 100%;
-}
 
 .form-field-shadow {
   box-shadow: 0px 1px 4px 1px rgba(95, 0, 255, 0.218);
@@ -86,13 +73,15 @@
   top: 1rem;
   left: 1rem;
   transition: transform 0.2s ease, font-size 0.2s ease, top 0.2s ease;
-  font-size: 1rem; /* Adjust as needed */
+  font-size: 1rem;
+  /* Adjust as needed */
   color: #30349e;
 }
 
-.form-control:focus + .floating-label,
-.form-control:not(:placeholder-shown) + .floating-label {
+.form-control:focus+.floating-label,
+.form-control:not(:placeholder-shown)+.floating-label {
   top: 0.25rem;
   transform: translateY(-50%);
-  font-size: 0.75rem; /* Adjust as needed */
+  font-size: 0.75rem;
+  /* Adjust as needed */
 }
