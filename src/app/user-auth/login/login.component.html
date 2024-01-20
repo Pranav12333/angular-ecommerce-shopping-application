@@ -1,17 +1,16 @@
+<div class="Container">
 <div class="row align-items-center my-5 mx-0">
 
   <!-- left  Image Column -->
   <div class="col-6 d-flex justify-content-center">
 
-    <div class="col-md-6 text-center">
-      <img src="../../../assets/landing-page-img.png" alt="Right Image" class="img-fluid landing-page-img">
-      <!-- <img src="../../../assets/log-in-left-img.png" alt="Left Image" class="img-fluid"> -->
-    </div>
+    <!-- <div class="col-md-6 text-center"> -->
+      <img src="../../../assets/log-in-left-img.png" alt="Left Image" class="img-fluid">
   </div>
 
   <!-- Login Container Column -->
   <div class="col-6">
-    <div class="mainForm col-md-10">
+    <div class="mainForm">
       <h2 class="text-center"><i class="fas fa-sign-in-alt"></i> Login</h2>
       <form [formGroup]="loginUserForm" (ngSubmit)="loginUser(loginUserForm.value)" class="registration-form">
         <div class="form-group">
@@ -62,4 +61,8 @@
       </form>
     </div>
   </div>
+</div>
+
+<!-- <img src="../../../assets/landing-page-img.png" alt="Right Image" class="img-fluid landing-page-img"> -->
+
 </div>
