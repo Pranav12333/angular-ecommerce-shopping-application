@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent {
-
-  
+  selectedDate:any;
+ 
 
   constructor(){}
 
