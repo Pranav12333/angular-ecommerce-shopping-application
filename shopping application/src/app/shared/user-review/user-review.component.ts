@@ -9,20 +9,21 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./user-review.component.scss']
 })
 export class UserReviewComponent implements OnInit {
-  
+
   reviewForm: FormGroup;
   productId: any;
   selectedRating = 0;
+  // stars: number[] = [1, 2, 3, 4, 5];
+
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {
     this.reviewForm = new FormGroup({
       userName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15), Validators.pattern("^[A-Za-z ]+$")]),
-      reviewText: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(400)]),   
+      reviewText: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(400)]),
       date: new FormControl(''),
       productReviewId: new FormControl(null),
       ratingValue: new FormControl(null)
     });
-    
   }
 
   ngOnInit() {
@@ -39,25 +40,15 @@ export class UserReviewComponent implements OnInit {
 
   setRating(rating: number) {
     this.selectedRating = rating;
-    // this.reviewForm.get('ratingValue')?.setValue(rating); // Update the value in the form
-    console.log(this.reviewForm.value);
-
   }
 
-  submitReview(data: any) { 
-    // Get the current date
+  submitReview(data: any) {
     const currentDate = new Date().toISOString();
-
-    // Set the date field and productReviewId in the form with the current date and procuct id
     this.reviewForm.get('date')?.setValue(currentDate);
 
-    // Now, submit the form
-    this.productService.postProductReview(this.reviewForm?.value).subscribe((res) => {
-    });
+    this.productService.postProductReview(this.reviewForm?.value).subscribe((res) => { });
 
-    this.router.navigate(['/all-product'])
-
+    this.router.navigate(['/all-product']);
   }
-
 
 }

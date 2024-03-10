@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(a => a.AdminModule)
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '/not-found'
-  // }
+  {
+    path: '**',
+    redirectTo: '/not-found'
+  }
 ];
 
 @NgModule({

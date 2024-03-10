@@ -1,6 +1,5 @@
 .container {
   max-width: 500px; /* Increase the width for better alignment with about-us */
-  margin: auto;
   padding: 0; /* Remove padding */
 }
 
@@ -10,6 +9,7 @@ h1 {
 
 /* Styles for the section title container */
 .section-title {
+  cursor: pointer;
   display: inline-block;
   border-radius: 8px;
   border-width: 0 1px 2px 1px;
@@ -29,7 +29,7 @@ form {
 }
 
 label {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 textarea {
@@ -41,11 +41,9 @@ textarea {
   text-align: center;
 }
 
-
-
 /* Style for the form container */
 .contact-us-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: auto;
   border: 2px solid rgba(0, 0, 0, 0.398);
   border-radius: 30px;
@@ -77,3 +75,6 @@ textarea {
       font-size: 24px; // Smaller font size for headings
   }
 }
+
+
+

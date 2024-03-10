@@ -26,25 +26,37 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.getAllData();
+    this.getAllData().then((result) => { })
+      .catch((error) => { });
   }
 
-  getAllData() {
-    this.productService.getAllProduct().subscribe((res) => {
-      this.allProduct = res;
-      this.showFilteredProducts = false;
-      this.productService.allProduct$.subscribe((res) => {
-        this.showFilteredProducts = res;
-      })
+
+  getAllData(): Promise<any[]> {
+    return new Promise<any[]>((resolve, reject) => {
+      this.productService.getAllProduct().subscribe((res) => {
+        this.allProduct = res;
+        this.showFilteredProducts = false;
+        this.productService.allProduct$.subscribe((res) => {
+          this.showFilteredProducts = res;
+        });
+        resolve(res); // Resolve the promise with the result
+      },
+        (error) => {
+          reject(error); // Reject the promise if an error occurs
+        }
+      );
     });
   }
+
+
+
 
   onPriceRangeChange(event: Event) {
     this.showFilteredProducts = true;
     const selectedPrice = (event.target as HTMLInputElement).valueAsNumber;
     this.selectedPrice = { ...this.selectedPrice, max: selectedPrice };
     this.filteredProducts = this.allProduct.filter((product: { price: number }) =>
-      product.price >= this.selectedPrice.min && product.price <= this.selectedPrice.max 
+      product.price >= this.selectedPrice.min && product.price <= this.selectedPrice.max
     );
   }
 }

@@ -11,6 +11,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { SharedModule } from '../shared/shared.module';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     ContactUsComponent,
     AboutUsComponent,
     AddToCartComponent,
+    MyOrdersComponent,
     
   ],
   imports: [

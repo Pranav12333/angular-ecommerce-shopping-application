@@ -8,6 +8,7 @@ import { UserReviewComponent } from './user-review/user-review.component';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { RatingModule } from 'primeng/rating';
 import { PaymentComponent } from './payment/payment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

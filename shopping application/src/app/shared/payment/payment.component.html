@@ -1,37 +1,60 @@
 <div class="container my-5">
-    <form class="payment-form p-4">
+    <form class="payment-form p-4" [formGroup]="paymentForm" (ngSubmit)="submitPayment()">
+
         <div class="d-flex justify-content-center mb-4">
-            <h1 class="heading px-3 py-2">Payment</h1>
-        </div>
-        <div class="form-group">
-            <label for="cardNumber">Card Number</label>
-            <input type="text" class="form-control" placeholder="Enter card number">
-        </div>
-        <div class="form-group">
-            <label for="expiryDate">Expiry Date</label>
-            <input type="text" class="form-control" placeholder="MM/YY">
+            <h5 class="heading px-3 py-2"><i class="fas fa-money-bill"></i> Payment</h5>
         </div>
 
-        <!-- <div class="form-group">
-            <label for="paymentDate">Payment Date</label>
-            <input
-                type="text"
-                class="form-control"
-                placeholder="DD/MM/YYYY"
-                bsDatepicker
-                [(ngModel)]="selectedDate"
-            />
-        </div> -->
+        <div class="row">
+            <div class="col-4">
+                <label for="productTitle"><i class="fas fa-tags"></i> Product Title</label>
+                <input type="text" class="form-control" formControlName="title">
+            </div>
+            <div class="col-4">
+                <label for="productCategory"><i class="fas fa-list"></i> Category of Product</label>
+                <input type="text" class="form-control" formControlName="category">
+            </div>
+            <div class="col-4">
+                <label for="price"><i class="fas fa-dollar-sign"></i> Price</label>
+                <input type="number" class="form-control" formControlName="price">
+            </div>
+        </div>
 
-        <div class="form-group">
-            <label for="cvv">CVV</label>
-            <input type="text" class="form-control" placeholder="Enter CVV">
+        <div class="row">
+            <div class="col-4">
+                <label for="cardNumber"><i class="fas fa-credit-card"></i> Card Number</label>
+                <input type="text" class="form-control" placeholder="Enter card number" formControlName="cardNumber">
+            </div>
+            <div class="col-4">
+                <label for="cvv"><i class="fas fa-lock"></i> CVV</label>
+                <input type="text" class="form-control" placeholder="Enter CVV" formControlName="cvv">
+            </div>
+            <div class="col-4">
+                <label for="expiryDate"> <i class="far fa-calendar-alt"></i> Expiry Date </label>
+                <input type="date" class="form-control" formControlName="expiryDate">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="billingAddress">Billing Address</label>
-            <textarea class="form-control" rows="3" placeholder="Enter billing address"></textarea>
+
+        <div class="row">
+            <div class="col-8">
+                <label for="billingAddress"><i class="fas fa-map-marker-alt"></i> Billing Address</label>
+                <textarea class="form-control" rows="2" placeholder="Enter billing address"
+                    formControlName="billingAddress"></textarea>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Payment</button>
+
+        <div class="row mb-0 text-center">
+            <div class="col-12">
+                <label class="form-check-label" for="termsCheck">
+                    <input class="form-check-input" type="checkbox" formControlName="termsCheck">
+                    I have read all the terms & conditions.
+                </label>
+            </div>
+            <div class="col-3 mt-2 mx-auto">
+                <button type="submit" class="btn btn-primary btn-sm btn-block mx-auto">
+                    <i class="fas fa-check"></i> Submit Payment
+                </button>
+            </div>
+        </div>
     </form>
 </div>
-

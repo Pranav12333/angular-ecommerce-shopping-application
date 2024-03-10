@@ -1,56 +1,56 @@
-<div class="container mt-5">
-    <!-- Add a new review -->
-    <div class="give-review">
-        <h3>Add Your Review</h3>
-        <form [formGroup]="reviewForm">
-            <div class="form-group">
-                <label for="userName">Your Name</label>
-                <input type="text" formControlName="userName" class="form-control form-field-shadow" required>
-                <p *ngIf="getFormControl('userName')?.invalid && getFormControl('userName')?.touched"
-                    class="error-message">
-                    <ng-container *ngIf="getFormControl('userName')?.errors?.['required']">Username is
-                        required.</ng-container>
-                    <ng-container *ngIf="getFormControl('userName')?.errors?.['minlength']">
-                        Username should have at least 3 characters.
-                    </ng-container>
-                    <ng-container *ngIf="getFormControl('userName')?.errors?.['maxlength']">
-                        Username should have at most 15 characters.
-                    </ng-container>
-                </p>
+<div class="review-container p-5 mt-5">
+    <h3 class="section-title text-center">Add Your Review</h3>
+    <form [formGroup]="reviewForm" class="review-form">
+        <div class="form-group">
+            <label for="userName">Your Name</label>
+            <input type="text" formControlName="userName" class="form-control form-field-shadow" required>
+            <div class="error-message"
+                *ngIf="getFormControl('userName')?.invalid && getFormControl('userName')?.touched">
+                <ng-container *ngIf="getFormControl('userName')?.errors?.['required']">Username is
+                    required.</ng-container>
+                <ng-container *ngIf="getFormControl('userName')?.errors?.['minlength']">
+                    Username should have at least 3 characters.
+                </ng-container>
+                <ng-container *ngIf="getFormControl('userName')?.errors?.['maxlength']">
+                    Username should have at most 15 characters.
+                </ng-container>
             </div>
+        </div>
 
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="ratings">
-                    <i class="fa fa-star star-icon" (click)="setRating(1)" [class.checked]="selectedRating >= 1"></i>
-                    <i class="fa fa-star star-icon" (click)="setRating(2)" [class.checked]="selectedRating >= 2"></i>
-                    <i class="fa fa-star star-icon" (click)="setRating(3)" [class.checked]="selectedRating >= 3"></i>
-                    <i class="fa fa-star star-icon" (click)="setRating(4)" [class.checked]="selectedRating >= 4"></i>
-                    <i class="fa fa-star star-icon" (click)="setRating(5)" [class.checked]="selectedRating === 5"></i>
-                </div>
+        <!-- <div class="form-group">
+            <label for="rating">Your Rating</label>
+            <div class="ratings">
+                <ng-container *ngFor="let star of stars">
+                    <i class="fa fa-star star-icon" (click)="setRating(star)"
+                        [ngClass]="{
+                            'red-star': selectedRating === star,
+                            'brown-star': selectedRating === star,
+                            'yellow-star': selectedRating === star,
+                            'orange-star': selectedRating === star,
+                            'green-star': selectedRating === star,
+                            'gray-star': selectedRating !== star
+                        }"></i>
+                </ng-container>
             </div>
+        </div> -->
 
-            <div class="form-group mt-4">
-                <label for="reviewText">Your Review </label>
-                <textarea formControlName="reviewText" class="form-control" rows="4" required></textarea>
-                <p *ngIf="getFormControl('reviewText')?.invalid && getFormControl('reviewText')?.touched"
-                    class="error-message">
-                    <ng-container *ngIf="getFormControl('reviewText')?.errors?.['required']">description is
-                        required.</ng-container>
-                    <ng-container *ngIf="getFormControl('reviewText')?.errors?.['minlength']">
-                        description is too short
-                    </ng-container>
-                    <ng-container *ngIf="getFormControl('reviewText')?.errors?.['maxlength']">
-                        description is too long
-                    </ng-container>
-                </p>
+
+        <div class="form-group">
+            <label for="reviewText">Your Review</label>
+            <textarea formControlName="reviewText" class="form-control" rows="4" required></textarea>
+            <div class="error-message"
+                *ngIf="getFormControl('reviewText')?.invalid && getFormControl('reviewText')?.touched">
+                <ng-container *ngIf="getFormControl('reviewText')?.errors?.['required']">Description is
+                    required.</ng-container>
+                <ng-container *ngIf="getFormControl('reviewText')?.errors?.['minlength']">
+                    Description is too short
+                </ng-container>
+                <ng-container *ngIf="getFormControl('reviewText')?.errors?.['maxlength']">
+                    Description is too long
+                </ng-container>
             </div>
-
-            <input type="hidden" formControlName="date">
-            <input type="hidden" formControlName="ratingValue">
-
-            <button type="submit" class="btn btn-primary" (click)="submitReview(reviewForm.value)"
-                [disabled]="reviewForm.invalid">Submit
-                Review</button>
-        </form>
-    </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="submitReview(reviewForm.value)"
+            [disabled]="reviewForm.invalid">Submit Review</button>
+    </form>
 </div>

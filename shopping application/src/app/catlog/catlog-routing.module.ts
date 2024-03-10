@@ -8,26 +8,36 @@ import { authGuardGuard } from '../guard/auth-guard.guard';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 
 const routes: Routes = [
-  { path: 'all-product' , component: AllProductComponent, 
-  canActivate: [authGuardGuard] 
-},
-  { path: 'female-product' , component: FemaleProductComponent,
-   canActivate: [authGuardGuard] 
+  {
+    path: 'all-product', component: AllProductComponent,
+    canActivate: [authGuardGuard]
   },
-  { path: 'male-product' , component: MaleProductComponent,
-   canActivate: [authGuardGuard] 
+  {
+    path: 'female-product', component: FemaleProductComponent,
+    canActivate: [authGuardGuard]
   },
-  { path: 'product-details/:id' , component: ProductDetailsComponent, 
-  canActivate: [authGuardGuard] 
-},
-  { path: 'about-us' , component: AboutUsComponent }, 
-  { path: 'contact-us' , component: ContactUsComponent },
-  { path: 'add-to-cart' , component: AddToCartComponent,
-   canActivate: [authGuardGuard]
-   }
+  {
+    path: 'male-product', component: MaleProductComponent,
+    canActivate: [authGuardGuard]
+  },
+  {
+    path: 'product-details/:id', component: ProductDetailsComponent,
+    canActivate: [authGuardGuard]
+  },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  {
+    path: 'add-to-cart', component: AddToCartComponent,
+    canActivate: [authGuardGuard]
+  },
+  {
+    path: 'my-order', component : MyOrdersComponent,
+    canActivate: [authGuardGuard]
+  }
 ];
 
 @NgModule({
